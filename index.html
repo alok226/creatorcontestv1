@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creator Contest 2026 | Sri Balbhadralal Arun Kumar</title>
+    
+    <!-- External Assets -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            light: '#f4ecdb',
+                            DEFAULT: '#cda25e',
+                            dark: '#965f34',
+                            bright: '#ffd700'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Google Sites Iframe Reset */
+        html { margin: 0; padding: 0; overflow-x: hidden; height: auto; scroll-behavior: smooth; }
+        body { 
+            margin: 0; 
+            padding: 0; 
+            width: 100%; 
+            font-family: 'Inter', sans-serif; 
+            background-color: #050505; 
+            color: #fff; 
+            line-height: 1.5;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .gold-text-gradient {
+            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .award-border {
+            border: 1px solid;
+            border-image: linear-gradient(to right, #bf953f, #fcf6ba, #aa771c) 1;
+        }
+        .gold-glow {
+            box-shadow: 0 0 15px rgba(205, 162, 94, 0.2);
+        }
+        
+        section { padding-top: 4rem; padding-bottom: 4rem; position: relative; }
+        @media (max-width: 768px) {
+            section { padding-top: 3rem; padding-bottom: 3rem; }
+            .hero-title { font-size: 2.8rem !important; line-height: 1.1 !important; }
+            .hero-sub { font-size: 1.1rem !important; margin-bottom: 2rem !important; }
+        }
+        
+        .nav-scroll::-webkit-scrollbar { display: none; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Stable Formula Layout (Using Image for Google Sites compatibility) */
+        .math-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px 5px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 8px;
+            margin: 10px 0;
+            min-height: 50px;
+        }
+        .formula-img {
+            max-width: 90%;
+            height: auto;
+            filter: brightness(0) invert(1);
+        }
+    </style>
+</head>
+<body class="text-center">
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 w-full z-50 bg-black/95 backdrop-blur-lg border-b border-gold/20">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex flex-col text-left">
+                <span class="font-serif font-black text-xl gold-text-gradient uppercase tracking-tighter leading-tight">Sri Blak</span>
+                <span class="text-[7px] uppercase tracking-[0.3em] text-white/60 font-bold italic leading-none">Contest 2026</span>
+            </div>
+            <!-- Desktop Links -->
+            <div class="hidden md:flex gap-6 text-[10px] uppercase font-bold tracking-widest text-gold-light/60">
+                <a href="#about" class="hover:text-gold transition">About</a>
+                <a href="#participants" class="hover:text-gold transition">Who</a>
+                <a href="#topics" class="hover:text-gold transition">Topics</a>
+                <a href="#rules" class="hover:text-gold transition">Rules</a>
+                <a href="#scoring" class="hover:text-gold transition">Scoring</a>
+                <a href="#contact" class="hover:text-gold transition">Contact</a>
+            </div>
+            <a href="#register" class="bg-gold text-black px-4 py-1.5 text-[9px] font-black uppercase tracking-widest hover:scale-105 transition rounded-sm">
+                Register Now
+            </a>
+        </div>
+        <!-- Mobile Navigation -->
+        <div class="md:hidden flex overflow-x-auto nav-scroll gap-6 px-4 py-2 border-t border-white/5 text-[9px] uppercase font-bold text-white/40 no-scrollbar">
+            <a href="#about" class="whitespace-nowrap">About</a>
+            <a href="#participants" class="whitespace-nowrap">Who</a>
+            <a href="#topics" class="whitespace-nowrap">Topics</a>
+            <a href="#rules" class="whitespace-nowrap">Rules</a>
+            <a href="#scoring" class="whitespace-nowrap">Scoring</a>
+            <a href="#contact" class="whitespace-nowrap">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center px-4 pt-20">
+        <div class="absolute inset-0 opacity-20 pointer-events-none">
+            <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=2000" class="w-full h-full object-cover" alt="Award Stage">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-[#050505] pointer-events-none"></div>
+        
+        <div class="max-w-5xl mx-auto text-center relative z-10 py-12">
+            <div class="inline-block px-4 py-1 mb-8 award-border bg-white/5 backdrop-blur-sm">
+                <span class="text-gold text-[10px] font-black uppercase tracking-[0.3em]">Sri Balbhadralal Arun Kumar Presents</span>
+            </div>
+            
+            <h1 class="hero-title text-5xl md:text-8xl font-serif font-black text-white mb-4 leading-none tracking-tighter">
+                CREATOR CONTEST <br>
+                <span class="gold-text-gradient italic font-black">BY SRI BLAK</span>
+            </h1>
+
+            <h2 class="hero-sub text-xl md:text-4xl font-serif font-bold text-gold-light mb-12 tracking-[0.1em] uppercase">
+                CREATE. POST. WIN PRIZES.
+            </h2>
+            
+            <p class="text-base md:text-2xl text-slate-400 mb-12 max-w-2xl mx-auto font-light leading-relaxed italic px-4">
+                Join the ultimate creator hunt at <span class="text-white font-semibold italic">Sri Balbhadralal Arun Kumar shop</span>. Reels banao, post karo, aur 2026 ke star bano!
+            </p>
+
+            <a href="#register" class="inline-block px-12 py-5 bg-gold text-black text-xl font-black rounded-sm shadow-[0_0_30px_rgba(205,162,94,0.4)] hover:scale-105 transition uppercase tracking-tighter italic">
+                Aao Contest Join Karein 🚀
+            </a>
+            
+            <p class="mt-8 text-gold/40 text-[10px] font-bold tracking-[0.5em] uppercase italic">Powered by Tripixel Media</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-[#0a0a0a] border-y border-gold/10 px-4 py-20">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8 text-left">
+                <h2 class="text-4xl md:text-6xl font-serif font-bold text-white leading-tight">
+                    Ye Contest <span class="gold-text-gradient italic">Kya Hai?</span>
+                </h2>
+                <p class="text-slate-400 text-base md:text-lg leading-relaxed">
+                    Aapko hamari <strong>Sri Balbhadralal Arun Kumar shop</strong> mein aakar <span class="text-gold font-bold italic">kam se kam 1 Reel shoot karni hai (aap 3 tak bana sakte hain)</span>. Single visit mein shooting poori karein aur apne talent se inaam jeetein!
+                </p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="p-5 bg-white/5 border border-gold-200/20 rounded-lg award-border">
+                        <p class="text-gold font-bold text-sm uppercase text-center leading-none">Min 1 Reel</p>
+                        <p class="text-[10px] text-slate-500 mt-2 italic text-center">Flexible Participation</p>
+                    </div>
+                    <div class="p-5 bg-white/5 border border-gold-200/20 rounded-lg award-border">
+                        <p class="text-gold font-bold text-sm uppercase text-center leading-none">Single Visit</p>
+                        <p class="text-[10px] text-slate-500 mt-2 italic text-center">Shoot in 1 Day</p>
+                    </div>
+                </div>
+            </div>
+            <div class="relative group hidden md:block">
+                <div class="border border-gold/30 p-2 bg-gold/5 rounded-lg gold-glow">
+                    <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&q=80&w=800" class="w-full rounded-sm grayscale group-hover:grayscale-0 transition duration-700" alt="Shop View">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHO CAN PARTICIPATE -->
+    <section id="participants" class="bg-black py-20 px-4 border-b border-gold/10">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-5xl font-serif font-bold italic gold-text-gradient uppercase">Kaun Hissa Le Sakta Hai?</h2>
+                <p class="text-[8px] text-white/40 tracking-[0.4em] uppercase mt-2">Open for all digital stars</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                <div class="p-6 bg-white/5 border border-gold/20 rounded-xl award-border text-center">
+                    <div class="text-3xl mb-3">🤳</div>
+                    <p class="text-xs font-bold text-white uppercase tracking-wider leading-tight">Content Creators</p>
+                    <p class="text-[8px] text-slate-500 italic mt-1">(Any Niche)</p>
+                </div>
+                <div class="p-6 bg-white/5 border border-gold/20 rounded-xl award-border text-center">
+                    <div class="text-3xl mb-3">🎭</div>
+                    <p class="text-xs font-bold text-white uppercase tracking-wider leading-tight">Meme Pages</p>
+                    <p class="text-[8px] text-slate-500 italic mt-1">(Humour Experts)</p>
+                </div>
+                <div class="p-6 bg-white/5 border border-gold/20 rounded-xl award-border text-center">
+                    <div class="text-3xl mb-3">📍</div>
+                    <p class="text-xs font-bold text-white uppercase tracking-wider leading-tight">Local Pages</p>
+                    <p class="text-[8px] text-slate-500 italic mt-1">(City Guide)</p>
+                </div>
+                <div class="p-6 bg-white/5 border border-gold/20 rounded-xl award-border text-center">
+                    <div class="text-3xl mb-3">👗</div>
+                    <p class="text-xs font-bold text-white uppercase tracking-wider leading-tight">Fashion Lovers</p>
+                    <p class="text-[8px] text-slate-500 italic mt-1">(Lifestyle)</p>
+                </div>
+                <div class="p-6 bg-white/5 border border-gold/20 rounded-xl award-border text-center col-span-2 lg:col-span-1 mx-auto lg:mx-0 w-full">
+                    <div class="text-3xl mb-3">🆕</div>
+                    <p class="text-xs font-bold text-white uppercase tracking-wider leading-tight">Beginners</p>
+                    <p class="text-[8px] text-slate-500 italic mt-1">(Any Followers)</p>
+                </div>
+            </div>
+            <div class="mt-12 text-center">
+                <div class="inline-block p-4 award-border bg-gold/5">
+                    <p class="text-xs md:text-base text-gold-light font-black italic">✨ Creativity matters more than follower count!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTENT TOPICS LIST -->
+    <section id="topics" class="bg-[#050505] py-20 px-4">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-3xl md:text-6xl font-serif font-bold italic gold-text-gradient mb-8 uppercase">Content Topic List</h2>
+            <div class="mb-12 p-4 border-l-4 border-gold bg-gold/5 inline-block text-left rounded-r-xl max-w-2xl">
+                <p class="text-xs md:text-sm text-gold-light font-medium leading-relaxed italic">
+                    <strong>Instruction:</strong> Aap apni Reels ke liye niche di gayi list mein se koi bhi topics choose kar sakte hain. (Min 1 Topic, Max 3).
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
+                <!-- Categories A-D (Simplified view) -->
+                <div class="bg-white/5 border border-gold/20 p-5 rounded-2xl award-border hover:bg-white/10 transition">
+                    <h3 class="text-gold font-black uppercase mb-4 text-xs md:text-sm border-b border-gold/20 pb-2">Category A: Fashion</h3>
+                    <ul class="text-[10px] space-y-3 text-slate-300 italic">
+                        <li>1. Outfit Transition Reel</li>
+                        <li>2. Budget Look Challenge</li>
+                        <li>3. Festival Styling</li>
+                        <li>4. Try & Decide Reel</li>
+                        <li>5. One Store, Many Styles</li>
+                    </ul>
+                </div>
+                <div class="bg-white/5 border border-gold/20 p-5 rounded-2xl award-border hover:bg-white/10 transition">
+                    <h3 class="text-gold font-black uppercase mb-4 text-xs md:text-sm border-b border-gold/20 pb-2">Category B: Meme</h3>
+                    <ul class="text-[10px] space-y-3 text-slate-300 italic">
+                        <li>6. Expectation vs Reality</li>
+                        <li>7. Desi Family Shopping</li>
+                        <li>8. Salary vs Shopping</li>
+                        <li>9. Fashion Problems</li>
+                        <li>10. POV Meme</li>
+                    </ul>
+                </div>
+                <div class="bg-white/5 border border-gold/20 p-5 rounded-2xl award-border hover:bg-white/10 transition">
+                    <h3 class="text-gold font-black uppercase mb-4 text-xs md:text-sm border-b border-gold/20 pb-2">Category C: Experience</h3>
+                    <ul class="text-[10px] space-y-3 text-slate-300 italic">
+                        <li>11. First Visit Experience</li>
+                        <li>12. Hidden Gems of Store</li>
+                        <li>13. Local Stores Pride</li>
+                        <li>14. Entry Transition</li>
+                        <li>15. One Minute Store Tour</li>
+                    </ul>
+                </div>
+                <div class="bg-white/5 border border-gold/20 p-5 rounded-2xl award-border hover:bg-white/10 transition">
+                    <h3 class="text-gold font-black uppercase mb-4 text-xs md:text-sm border-b border-gold/20 pb-2">Category D: Voiceover</h3>
+                    <ul class="text-[10px] space-y-3 text-slate-300 italic">
+                        <li>16. Honest Review Reel</li>
+                        <li>17. Styling Tips VO</li>
+                        <li>18. Shopping Guide</li>
+                        <li>19. Fashion Advice</li>
+                        <li>20. Brand Appreciation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rules Section -->
+    <section id="rules" class="bg-rich py-20 px-4">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 text-left">
+            <!-- Content Rules -->
+            <div class="border border-gold/20 p-8 rounded-[2rem] bg-black/50 shadow-2xl award-border">
+                <h2 class="text-xl md:text-2xl font-serif font-black italic gold-text-gradient uppercase mb-6 border-b border-gold/20 pb-2">Content Rules</h2>
+                <ul class="space-y-4">
+                    <li class="flex gap-4">
+                        <span class="text-gold text-xl">📱</span>
+                        <p class="text-xs md:text-sm font-semibold text-slate-300 italic">Platform: Sirf Instagram Reels allowed hain.</p>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="text-gold text-xl">🎥</span>
+                        <p class="text-xs md:text-sm font-semibold text-slate-300 italic">Kam se kam <strong>1 original reel</strong> banana zaruri hai (Max 3).</p>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="text-gold text-xl">🏬</span>
+                        <p class="text-xs md:text-sm font-semibold text-slate-300 italic">Saari shooting <strong>Sri Balbhadralal Arun Kumar shop</strong> par hogi.</p>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="text-gold text-xl">📋</span>
+                        <p class="text-xs md:text-sm font-semibold text-slate-300 italic">Content original aur brand-safe hona chahiye.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Posting Rules -->
+            <div class="border border-gold/20 p-8 rounded-[2rem] bg-black/50 shadow-2xl award-border">
+                <h2 class="text-xl md:text-2xl font-serif font-black italic gold-text-gradient uppercase mb-6 border-b border-gold/20 pb-2">Posting Rules</h2>
+                <ul class="space-y-4 text-left">
+                    <li class="flex gap-4">
+                        <span class="text-gold text-xl">⏰</span>
+                        <p class="text-xs md:text-sm font-semibold text-slate-300 italic">Upload within 7 days from shoot date.</p>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="text-gold text-xl">🏷️</span>
+                        <div>
+                            <p class="text-xs md:text-sm font-semibold text-slate-300 mb-1 italic">Tag @sribalbhadralalarunkumar & @tripixelmedia.</p>
+                            <p class="text-xs font-black text-gold-light tracking-widest">Hashtag: #SBLAKCreatorContest</p>
+                        </div>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="text-red-500 text-xl font-black">🚫</span>
+                        <p class="text-xs md:text-sm font-semibold text-red-400 italic">Paid promotion ya boosting allowed nahi hai.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="max-w-4xl mx-auto mt-10 border border-red-900/30 p-8 rounded-[2rem] bg-red-950/10 backdrop-blur-sm text-center">
+            <h2 class="text-xl font-serif font-black italic text-red-500 uppercase mb-4 tracking-widest">Important Rules ⚠️</h2>
+            <p class="text-[10px] md:text-xs text-slate-300 italic">Fake engagement ya bots se disqualification hoga. Final decision Organizing team ka hoga.</p>
+        </div>
+    </section>
+
+    <!-- Scoring Section -->
+    <section id="scoring" class="bg-black border-y border-gold/10 py-20 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-2xl md:text-5xl font-serif font-bold italic gold-text-gradient mb-8 uppercase tracking-tighter text-center w-full">Score Calculation</h2>
+            
+            <div class="grid md:grid-cols-2 gap-10 items-start text-left max-w-5xl mx-auto">
+                <div class="space-y-4">
+                    <div class="p-6 bg-black border border-gold/20 shadow-xl rounded-xl">
+                        <p class="text-[8px] md:text-[10px] text-gold uppercase font-black mb-3 tracking-widest italic">Reach Score (40 Points)</p>
+                        <div class="math-container">
+                            <img src="https://latex.codecogs.com/svg.latex?Score%20%3D%20%5Cleft(%20%5Cfrac%7BAapke%20Views%7D%7BHighest%20Views%7D%20%5Cright)%20%5Ctimes%2040" 
+                                 alt="Reach Formula" class="formula-img">
+                        </div>
+                    </div>
+                    <div class="p-6 bg-black border border-gold/20 shadow-xl rounded-xl">
+                        <p class="text-[8px] md:text-[10px] text-gold uppercase font-black mb-3 tracking-widest italic">Engagement (30 Points)</p>
+                        <div class="math-container">
+                            <img src="https://latex.codecogs.com/svg.latex?Score%20%3D%20%5Cleft(%20%5Cfrac%7BAapka%20Engagement%7D%7BHighest%20Engagement%7D%20%5Cright)%20%5Ctimes%2030" 
+                                 alt="Engagement Formula" class="formula-img">
+                        </div>
+                    </div>
+                    <div class="p-6 bg-gold/5 border-l-4 border-gold rounded-r-xl">
+                        <p class="text-xs md:text-sm font-black text-white uppercase italic text-left tracking-widest mb-1">Quality Score (30 Points)</p>
+                        <p class="text-[10px] text-slate-400 italic text-left">Creativity + Rules compliance.</p>
+                    </div>
+                </div>
+
+                <div class="bg-[#0a0a0a] p-8 border border-gold/30 rounded-xl shadow-2xl award-border">
+                    <h4 class="font-serif font-black text-lg mb-6 text-white border-b border-gold/20 pb-2 text-center uppercase italic">Real-Life Example:</h4>
+                    <div class="space-y-4 text-[11px] md:text-xs font-medium leading-relaxed">
+                        <div class="flex justify-between text-slate-400">
+                            <span>Highest Views: 1,00,000</span>
+                            <span class="text-white font-black italic">Aapke: 50,000</span>
+                        </div>
+                        <div class="p-4 bg-gold/5 border border-gold/10 text-center italic text-gold-light font-black rounded-lg">
+                            Calculation: (50k / 100k) × 40 = <span class="text-lg text-white">20 Points</span>
+                        </div>
+                        <p class="text-slate-500 text-[10px] mt-4 italic text-center">Agar Quality best hai, toh kam views mein bhi aap <strong>Winner</strong> ban sakte hain!</p>
+                        <div class="mt-8 bg-gold p-4 text-black text-center font-black uppercase tracking-[0.2em] text-lg rounded-sm">Total Points: 100</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 bg-black text-center">
+        <div class="max-w-2xl mx-auto border-t border-b border-gold/20 py-12 relative overflow-hidden">
+            <h2 class="text-3xl font-serif font-black gold-text-gradient mb-10 italic uppercase tracking-widest">Questions? Contact Jury</h2>
+            <div class="space-y-10">
+                <div>
+                    <p class="text-[10px] text-white/40 uppercase tracking-[0.5em] font-black mb-1 italic">Contest Managed By</p>
+                    <p class="font-serif font-black text-3xl text-white tracking-tighter leading-none italic uppercase">Tripixel Media</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <p class="text-[9px] text-gold uppercase tracking-[0.4em] font-black mb-4 italic font-bold">Official Support Number</p>
+                    <a href="tel:6206459531" class="flex items-center gap-4 hover:scale-110 transition duration-300">
+                        <span class="p-2.5 border border-gold/30 rounded-full text-gold text-lg">📞</span>
+                        <span class="font-mono text-3xl font-black text-white tracking-tighter italic leading-none underline decoration-gold/50 decoration-1 underline-offset-8">
+                            6206459531
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration CTA -->
+    <section id="register" class="py-24 px-4 bg-black text-center relative">
+        <div class="max-w-4xl mx-auto relative z-10">
+            <h2 class="text-3xl md:text-7xl font-serif font-black text-white mb-6 leading-tight tracking-tighter uppercase italic">Taiyar Ho <br><span class="gold-text-gradient">Star Banne Ke Liye?</span></h2>
+            <p class="text-slate-500 text-xs md:text-base mb-12 max-w-sm mx-auto font-light leading-relaxed text-center px-4">Aaj hi register kijiye Sri Balbhadralal Arun Kumar Creator Contest 2026 mein.</p>
+            
+            <a href="https://forms.gle/your-form-link" target="_blank" class="inline-block px-14 py-6 bg-white text-black text-2xl font-black rounded-sm shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:bg-gold transition transform hover:-translate-y-2 uppercase tracking-tighter italic">
+                Register Now 🎫
+            </a>
+        </div>
+        <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-full h-[500px] bg-gold/5 blur-[120px] rounded-full -z-0 pointer-events-none"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-[#050505] text-center border-t border-gold/10 px-4">
+        <div class="flex justify-center items-center gap-6 md:gap-10 opacity-30 mb-8">
+            <div class="text-center">
+                <span class="text-white font-serif font-black text-xs md:text-sm italic block">Sri Blak</span>
+                <span class="text-[7px] text-gold font-bold uppercase tracking-widest leading-none">Legacy Shop</span>
+            </div>
+            <div class="h-6 w-px bg-white/10"></div>
+            <div class="text-center">
+                <span class="text-white font-black text-xs md:text-sm italic block uppercase">Tripixel</span>
+                <span class="text-[7px] text-gold font-bold uppercase tracking-widest leading-none">Media Partner</span>
+            </div>
+        </div>
+        <p class="text-slate-600 text-[8px] md:text-[10px] uppercase tracking-[0.4em] font-black italic max-w-xl mx-auto text-center leading-relaxed px-4">
+            © 2026 Sri Balbhadralal Arun Kumar • All Rights Reserved • Powered by Tripixel Media
+        </p>
+    </footer>
+
+</body>
+</html>
