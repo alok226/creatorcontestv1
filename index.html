@@ -45,21 +45,23 @@
             -webkit-font-smoothing: antialiased;
         }
         
-        /* Enlarged & Prominent Logo Branding */
-        .nav-logo { height: 90px; width: auto; object-fit: contain; } /* Increased from 75px */
-        .hero-top-logo { height: 180px; width: auto; object-fit: contain; margin-bottom: 20px; } /* New Size for Creator Contest Logo */
-        .title-logo { height: 220px; width: auto; object-fit: contain; margin: 20px auto; } /* For Sri Blak logo replacing H1 */
-        .partner-logo { height: 75px; width: auto; object-fit: contain; } /* Tripixel Logo increased */
-        .contact-logo { height: 100px; width: auto; object-fit: contain; } /* Increased */
-        .footer-logo { height: 80px; width: auto; object-fit: contain; } /* Increased */
+        /* Enlarged & Prominent Logo Branding (3x Increased) */
+        .nav-logo { height: 120px; width: auto; object-fit: contain; } 
+        .hero-top-logo { height: 540px; width: auto; object-fit: contain; margin-bottom: 20px; } /* 180px * 3 = 540px */
+        .title-logo { height: 220px; width: auto; object-fit: contain; margin: 20px auto; } 
+        .partner-logo { height: 225px; width: auto; object-fit: contain; } /* 75px * 3 = 225px */
+        .contact-logo { height: 200px; width: auto; object-fit: contain; } /* Increased */
+        .footer-logo { height: 150px; width: auto; object-fit: contain; } /* Increased */
         
         section { padding-top: 5rem; padding-bottom: 5rem; position: relative; }
+        
         @media (max-width: 768px) {
             section { padding-top: 3.5rem; padding-bottom: 3.5rem; }
-            .nav-logo { height: 65px; }
-            .hero-top-logo { height: 130px; }
-            .title-logo { height: 150px; }
-            .partner-logo { height: 50px; }
+            .nav-logo { height: 80px; }
+            .hero-top-logo { height: 250px; }
+            .title-logo { height: 120px; }
+            .partner-logo { height: 100px; }
+            .contact-logo { height: 100px; }
         }
         
         .nav-scroll::-webkit-scrollbar { display: none; }
@@ -92,13 +94,13 @@
 
     <!-- Navigation Bar (Prominent Logo Branding) -->
     <nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 h-28 flex items-center justify-between">
+        <div class="max-w-7xl mx-auto px-4 h-32 flex items-center justify-between">
             <div class="flex items-center gap-3">
                 <!-- Enlarged Creator Contest Logo in Nav -->
                 <img src="Creator Contest Logo.png" alt="Creator Contest" class="nav-logo">
             </div>
             <!-- Links -->
-            <div class="hidden md:flex gap-10 text-[12px] uppercase font-black tracking-widest text-slate-500">
+            <div class="hidden md:flex gap-8 text-[12px] uppercase font-black tracking-widest text-slate-500">
                 <a href="#about" class="hover:text-brand-pink transition">About</a>
                 <a href="#steps" class="hover:text-brand-pink transition">Steps</a>
                 <a href="#topics" class="hover:text-brand-pink transition">Categories</a>
@@ -111,21 +113,21 @@
         </div>
     </nav>
 
-    <!-- Hero Section (Re-designed for Logos) -->
-    <section class="relative min-h-screen flex items-center justify-center px-4 pt-40 bg-slate-50">
-        <div class="max-w-5xl mx-auto text-center relative z-10 py-12">
+    <!-- Hero Section (Re-designed for Huge Logos) -->
+    <section class="relative min-h-screen flex items-center justify-center px-4 pt-48 bg-slate-50">
+        <div class="max-w-6xl mx-auto text-center relative z-10 py-12">
             
-            <!-- Creator Contest Logo (Top Position) -->
+            <!-- Creator Contest Logo (Top Position - 3x Increased) -->
             <img src="Creator Contest Logo.png" alt="Creator Contest Logo" class="hero-top-logo mx-auto">
             
-            <div class="inline-block px-6 py-2 mb-8 rounded-full border-2 border-brand-pink bg-white shadow-sm">
-                <span class="text-brand-pink text-[12px] font-black uppercase tracking-[0.2em]">Official 2026 Season</span>
+            <div class="inline-block px-6 py-2 mb-12 rounded-full border-2 border-brand-pink bg-white shadow-sm">
+                <span class="text-brand-pink text-[14px] font-black uppercase tracking-[0.3em]">Official 2026 Season</span>
             </div>
             
-            <!-- Sri Blak Logo (Replacing Title Text) -->
+            <!-- Sri Blak Logo (Main Title Spot) -->
             <img src="sri blak logo.png" alt="Sri Balbhadralal Arun Kumar Logo" class="title-logo mx-auto">
 
-            <h2 class="text-2xl md:text-5xl font-serif font-bold text-brand-purple mb-12 tracking-tight uppercase italic">
+            <h2 class="text-2xl md:text-5xl font-serif font-bold text-brand-purple mt-8 mb-12 tracking-tight uppercase italic">
                 CREATE. POST. <span class="text-brand-pink underline decoration-4 underline-offset-8">WIN PRIZES.</span>
             </h2>
             
@@ -137,9 +139,9 @@
                 Nomination Register Karein 🚀
             </a>
             
-            <div class="mt-20 flex flex-col items-center gap-6 opacity-90">
-                <span class="text-[11px] font-black uppercase tracking-[0.5em] text-slate-400 italic">Digitally Powered by</span>
-                <!-- Enlarged Tripixel Partner Logo -->
+            <div class="mt-24 flex flex-col items-center gap-6 opacity-90 border-t border-slate-200 pt-16">
+                <span class="text-[12px] font-black uppercase tracking-[0.5em] text-slate-400 italic">Digitally Powered by</span>
+                <!-- Enlarged Tripixel Partner Logo (3x Increased) -->
                 <img src="Tripixel Logo.png" alt="Tripixel Media" class="partner-logo mx-auto">
             </div>
         </div>
@@ -193,16 +195,19 @@
             <p class="text-brand-purple text-sm uppercase tracking-widest font-black italic mb-16">Process mapping for creators</p>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <!-- Step 1 -->
                 <div class="p-8 bg-white border border-slate-100 rounded-3xl shadow-sm hover:border-brand-pink transition">
                     <div class="step-bubble mx-auto mb-6 bg-brand-purple">1</div>
                     <h3 class="text-brand-dark font-black uppercase mb-3 text-sm tracking-widest">Register</h3>
                     <p class="text-[11px] text-slate-500 italic font-bold">Google Form bhariye aur apni details share karein.</p>
                 </div>
+                <!-- Step 2 -->
                 <div class="p-8 bg-white border border-slate-100 rounded-3xl shadow-sm hover:border-brand-pink transition">
                     <div class="step-bubble mx-auto mb-6 bg-brand-pink">2</div>
                     <h3 class="text-brand-dark font-black uppercase mb-3 text-sm tracking-widest">Confirmation</h3>
                     <p class="text-[11px] text-slate-500 italic font-bold">Team aapka form check karke selection aur shoot date confirm karegi.</p>
                 </div>
+                <!-- Step 3 -->
                 <div class="p-8 bg-white border border-slate-100 rounded-3xl shadow-sm hover:border-brand-pink transition">
                     <div class="step-bubble mx-auto mb-6 bg-brand-purple">3</div>
                     <h3 class="text-brand-dark font-black uppercase mb-3 text-sm tracking-widest">The Shoot</h3>
@@ -211,11 +216,13 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Step 4 -->
                 <div class="p-8 bg-white border border-slate-100 rounded-3xl shadow-sm hover:border-brand-pink transition">
                     <div class="step-bubble mx-auto mb-6 bg-brand-pink">4</div>
                     <h3 class="text-brand-dark font-black uppercase mb-3 text-sm tracking-widest">Post & Track</h3>
                     <p class="text-[11px] text-slate-500 italic font-bold">Reels upload karke humein tag karein aur views grow karein.</p>
                 </div>
+                <!-- Step 5 -->
                 <div class="p-8 bg-brand-pink rounded-3xl shadow-xl transition text-white">
                     <div class="step-bubble mx-auto mb-6 bg-white text-brand-pink">5</div>
                     <h3 class="font-black uppercase mb-3 text-sm tracking-widest">Results</h3>
@@ -232,29 +239,29 @@
             <p class="text-brand-pink text-[10px] tracking-[0.3em] uppercase mb-16 font-black italic">Pick your theme and capture the market</p>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
-                <!-- Category 1 -->
+                <!-- Festive Traditions -->
                 <div class="bg-white p-8 rounded-[2rem] border-2 border-brand-pink shadow-sm hover:shadow-xl transition group">
                     <div class="text-5xl mb-6 group-hover:scale-110 transition duration-300">🌙</div>
                     <h3 class="text-brand-pink font-black uppercase mb-6 text-sm md:text-base border-b-2 border-pink-50 pb-4">Festive Traditions</h3>
                     <ul class="text-[11px] md:text-xs space-y-4 text-slate-600 font-semibold italic leading-relaxed">
-                        <li class="flex gap-2">✦ <strong>Outfit Reveal:</strong> Traditional wear transition reel.</li>
-                        <li>✦ <strong>Shopping Mood:</strong> Celebration shopping and gifts selection.</li>
-                        <li>✦ <strong>Family Relatable:</strong> Relatable festive shopping jokes/meme.</li>
+                        <li class="flex gap-2"><span>✦</span> <strong>Outfit Reveal:</strong> Traditional wear transition reel.</li>
+                        <li><span>✦</span> <strong>Shopping Mood:</strong> Celebration shopping and gifts selection.</li>
+                        <li><span>✦</span> <strong>Family Relatable:</strong> Relatable festive shopping jokes/meme.</li>
                     </ul>
                 </div>
 
-                <!-- Category 2 -->
+                <!-- Grand Celebration -->
                 <div class="bg-white p-8 rounded-[2rem] border-2 border-brand-purple shadow-sm hover:shadow-xl transition group">
                     <div class="text-5xl mb-6 group-hover:scale-110 transition duration-300">💍</div>
                     <h3 class="text-brand-purple font-black uppercase mb-6 text-sm md:text-base border-b-2 border-purple-50 pb-4">Grand Celebration</h3>
                     <ul class="text-[11px] md:text-xs space-y-4 text-slate-600 font-semibold italic leading-relaxed">
-                        <li class="flex gap-2">✦ <strong>Party Styling:</strong> Cinematic look for special events.</li>
-                        <li>✦ <strong>Guest Meme:</strong> Funny baraati or event group shopping.</li>
-                        <li>✦ <strong>Signature Stock:</strong> Showcase premium signature wear.</li>
+                        <li class="flex gap-2"><span>✦</span> <strong>Party Styling:</strong> Cinematic look for special events.</li>
+                        <li><span>✦</span> <strong>Guest Meme:</strong> Funny baraati or event group shopping.</li>
+                        <li><span>✦</span> <strong>Signature Stock:</strong> Showcase premium signature wear.</li>
                     </ul>
                 </div>
 
-                <!-- Category 3 -->
+                <!-- Creative Fashion -->
                 <div class="bg-white p-8 rounded-[2rem] border-2 border-brand-dark shadow-sm hover:shadow-xl transition group">
                     <div class="text-5xl mb-6 group-hover:scale-110 transition duration-300">📸</div>
                     <h3 class="text-brand-dark font-black uppercase mb-6 text-sm md:text-base border-b-2 border-slate-50 pb-4">Creative Fashion</h3>
@@ -272,7 +279,7 @@
         </div>
     </section>
 
-    <!-- Scoring Section (Exact breakdown 40, 30, 20, 10) -->
+    <!-- Scoring Section -->
     <section id="scoring" class="bg-slate-50 py-24 px-4 border-y border-slate-100 text-center">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-3xl md:text-6xl font-serif font-black text-slate-900 mb-4 uppercase tracking-tighter">Scoring Metrics</h2>
@@ -292,7 +299,6 @@
                             <img src="https://latex.codecogs.com/svg.latex?Score%20%3D%20%5Cleft(%20%5Cfrac%7BAapka%20Engagement%7D%7BHighest%20Engagement%7D%20%5Cright)%20%5Ctimes%2030" alt="Engagement Formula" class="formula-img">
                         </div>
                     </div>
-                    <!-- Detailed Breakdown Boxes -->
                     <div class="grid grid-cols-2 gap-4">
                         <div class="p-6 bg-pink-50 border border-brand-pink/20 rounded-2xl text-center">
                             <p class="text-[9px] font-black text-brand-pink uppercase mb-1">Creativity</p>
@@ -333,27 +339,26 @@
         </div>
     </section>
 
-    <!-- Final Contact Us Segment (Light Theme for Dark Logos) -->
+    <!-- Final Contact Us Segment (Light Theme) -->
     <section id="contact" class="py-24 px-4 bg-white relative overflow-hidden border-t border-slate-100">
         <div class="max-w-6xl mx-auto relative z-10">
-            <h2 class="text-3xl md:text-8xl font-serif font-black text-brand-pink mb-16 italic uppercase tracking-tighter text-center">Contact Us</h2>
+            <h2 class="text-3xl md:text-8xl font-serif font-black text-brand-pink mb-24 italic uppercase tracking-tighter text-center">Contact Us</h2>
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <!-- Branding & Direct Support -->
+                <!-- Branding & Support (Enlarged Tripixel) -->
                 <div class="text-left space-y-12">
-                    <div class="space-y-4">
+                    <div class="space-y-6">
                         <p class="text-[11px] text-brand-purple uppercase tracking-[0.5em] font-black italic">Digitally Managed By</p>
-                        <div class="flex items-center gap-6">
-                            <!-- Enlarged Tripixel Logo -->
+                        <div class="flex items-center gap-8">
+                            <!-- Huge Tripixel Logo -->
                             <img src="Tripixel Logo.png" alt="Tripixel Marketing" class="contact-logo">
-                            <span class="font-serif font-black text-4xl text-brand-dark tracking-tighter italic uppercase leading-none">Tripixel Media</span>
+                            <span class="font-serif font-black text-5xl text-brand-dark tracking-tighter italic uppercase leading-none">Tripixel Media</span>
                         </div>
                     </div>
 
-                    <div class="space-y-6">
+                    <div class="space-y-8">
                         <p class="text-[11px] text-brand-pink uppercase tracking-[0.4em] font-black italic font-bold">24/7 Support Helpline</p>
                         <a href="tel:6206459531" class="flex items-center gap-6 group">
-                            <!-- Prominent Phone Icon -->
                             <span class="p-6 bg-brand-pink rounded-full text-white text-4xl shadow-[0_10px_30px_rgba(240,42,166,0.5)] group-hover:bg-brand-purple transition duration-300">
                                 <i class="fas fa-phone-alt"></i>
                             </span>
@@ -366,9 +371,8 @@
 
                 <!-- Socials & Identity -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 text-left">
-                    <!-- Sri Blak Socials -->
                     <div class="p-10 bg-slate-50 rounded-[2.5rem] border border-slate-100 hover:border-brand-pink transition duration-300 shadow-sm group">
-                        <img src="sri blak logo.png" alt="Sri Blak Shop" class="h-16 mb-6 group-hover:scale-105 transition">
+                        <img src="sri blak logo.png" alt="Sri Blak Shop" class="h-20 mb-6 group-hover:scale-105 transition">
                         <p class="text-[11px] text-slate-500 uppercase tracking-widest font-black mb-4 leading-tight">Sri Balbhadralal<br>Arun Kumar</p>
                         <div class="flex gap-8">
                             <a href="https://www.instagram.com/sri_balbhadralal_arun_kumar?igsh=MTRianloMG45OTFjag==" target="_blank" class="text-4xl text-brand-pink hover:text-brand-purple transition transform hover:scale-110"><i class="fab fa-instagram"></i></a>
@@ -376,9 +380,9 @@
                         </div>
                     </div>
 
-                    <!-- Tripixel Media Socials -->
                     <div class="p-10 bg-slate-50 rounded-[2.5rem] border border-slate-100 hover:border-brand-purple transition duration-300 shadow-sm group">
-                        <img src="Tripixel Logo.png" alt="Tripixel Agency" class="h-16 mb-6 group-hover:scale-105 transition">
+                        <!-- Huge Tripixel Logo in Social box -->
+                        <img src="Tripixel Logo.png" alt="Tripixel Agency" class="h-20 mb-6 group-hover:scale-105 transition">
                         <p class="text-[11px] text-slate-500 uppercase tracking-widest font-black mb-4 leading-tight">Tripixel Media<br>Agency Partner</p>
                         <div class="flex gap-8">
                             <a href="https://www.instagram.com/tripixel_media?igsh=ZndjbnI3YnczM3h0" target="_blank" class="text-4xl text-brand-purple hover:text-brand-pink transition transform hover:scale-110"><i class="fab fa-instagram"></i></a>
@@ -390,13 +394,13 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-20 bg-slate-50 text-center border-t border-slate-100 px-4">
-        <div class="flex justify-center items-center gap-10 md:gap-16 opacity-100 mb-12 flex-wrap">
-            <!-- Order of enlarged logos in footer -->
+    <footer class="py-24 bg-slate-50 text-center border-t border-slate-100 px-4">
+        <div class="flex justify-center items-center gap-12 md:gap-20 opacity-100 mb-16 flex-wrap">
+            <!-- Order of enlarged logos in footer (3x size) -->
             <img src="sri blak logo.png" alt="Sri Blak Logo" class="footer-logo">
-            <div class="hidden md:block h-16 w-px bg-slate-200"></div>
+            <div class="hidden md:block h-20 w-px bg-slate-300"></div>
             <img src="Tripixel Logo.png" alt="Tripixel Logo" class="footer-logo">
-            <div class="hidden md:block h-16 w-px bg-slate-200"></div>
+            <div class="hidden md:block h-20 w-px bg-slate-300"></div>
             <img src="Creator Contest Logo.png" alt="Contest Logo" class="footer-logo">
         </div>
         <p class="text-slate-400 text-[11px] uppercase tracking-[0.4em] font-black italic max-w-xl mx-auto text-center leading-relaxed">
