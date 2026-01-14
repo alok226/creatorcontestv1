@@ -45,37 +45,41 @@
             -webkit-font-smoothing: antialiased;
         }
         
-        /* Enlarged & Prominent Logo Branding (3x Increased) */
-        .nav-logo { height: 120px; width: auto; object-fit: contain; } 
-        .hero-top-logo { height: 540px; width: auto; object-fit: contain; margin-bottom: 20px; } /* 180px * 3 = 540px */
-        .title-logo { height: 220px; width: auto; object-fit: contain; margin: 20px auto; } 
-        .partner-logo { height: 225px; width: auto; object-fit: contain; } /* 75px * 3 = 225px */
-        .contact-logo { height: 200px; width: auto; object-fit: contain; } /* Increased */
-        .footer-logo { height: 150px; width: auto; object-fit: contain; } /* Increased */
+        /* Massive Logo Branding (3x Increased) */
+        .nav-logo { height: 100px; width: auto; object-fit: contain; } 
+        .hero-top-logo { 
+            height: 600px; 
+            max-height: 70vh; 
+            width: auto; 
+            object-fit: contain; 
+            margin-bottom: 10px; 
+        } 
+        .title-logo { height: 200px; width: auto; object-fit: contain; margin: 10px auto; } 
+        .partner-logo { height: 280px; width: auto; object-fit: contain; } 
+        .contact-logo { height: 180px; width: auto; object-fit: contain; } 
+        .footer-logo { height: 120px; width: auto; object-fit: contain; } 
         
-        section { padding-top: 5rem; padding-bottom: 5rem; position: relative; }
+        /* Space Fixes */
+        section { padding-top: 4rem; padding-bottom: 4rem; position: relative; }
         
         @media (max-width: 768px) {
-            section { padding-top: 3.5rem; padding-bottom: 3.5rem; }
-            .nav-logo { height: 80px; }
-            .hero-top-logo { height: 250px; }
+            section { padding-top: 3rem; padding-bottom: 3rem; }
+            .nav-logo { height: 65px; }
+            .hero-top-logo { height: 350px; }
             .title-logo { height: 120px; }
-            .partner-logo { height: 100px; }
+            .partner-logo { height: 120px; }
             .contact-logo { height: 100px; }
         }
         
-        .nav-scroll::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-        /* Step Bubble Styling */
         .step-bubble {
             width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center;
             justify-content: center; background: #f02aa6; color: white; font-weight: 900; font-size: 1.3rem;
             box-shadow: 0 4px 15px rgba(240, 42, 166, 0.3);
         }
 
-        /* Formula Container */
         .math-container {
             width: 100%;
             display: flex;
@@ -92,18 +96,16 @@
 </head>
 <body class="text-center">
 
-    <!-- Navigation Bar (Prominent Logo Branding) -->
+    <!-- Navigation Bar -->
     <nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 h-32 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <!-- Enlarged Creator Contest Logo in Nav -->
+        <div class="max-w-7xl mx-auto px-4 h-28 flex items-center justify-between">
+            <div class="flex items-center">
                 <img src="Creator Contest Logo.png" alt="Creator Contest" class="nav-logo">
             </div>
-            <!-- Links -->
+            <!-- Desktop Links -->
             <div class="hidden md:flex gap-8 text-[12px] uppercase font-black tracking-widest text-slate-500">
-                <a href="#about" class="hover:text-brand-pink transition">About</a>
                 <a href="#steps" class="hover:text-brand-pink transition">Steps</a>
-                <a href="#topics" class="hover:text-brand-pink transition">Categories</a>
+                <a href="#topics" class="hover:text-brand-pink transition">Topics</a>
                 <a href="#scoring" class="hover:text-brand-pink transition">Scoring</a>
                 <a href="#contact" class="hover:text-brand-pink transition">Contact</a>
             </div>
@@ -113,35 +115,34 @@
         </div>
     </nav>
 
-    <!-- Hero Section (Reduced Padding for closer look) -->
-    <section class="relative min-h-screen flex items-center justify-center px-4 pt-40 bg-slate-50">
-        <div class="max-w-6xl mx-auto text-center relative z-10 py-6">
+    <!-- Hero Section (Reduced Top Padding) -->
+    <section class="relative min-h-screen flex items-center justify-center px-4 pt-32 bg-slate-50">
+        <div class="max-w-6xl mx-auto text-center relative z-10 py-4">
             
-            <!-- Creator Contest Logo (Top Position - 3x Increased) -->
+            <!-- Creator Contest Logo (Massive) -->
             <img src="Creator Contest Logo.png" alt="Creator Contest Logo" class="hero-top-logo mx-auto">
             
-            <div class="inline-block px-6 py-2 mb-12 rounded-full border-2 border-brand-pink bg-white shadow-sm">
-                <span class="text-brand-pink text-[14px] font-black uppercase tracking-[0.3em]">Official 2026 Season</span>
+            <div class="inline-block px-6 py-2 mb-8 rounded-full border-2 border-brand-pink bg-white shadow-sm">
+                <span class="text-brand-pink text-[14px] font-black uppercase tracking-[0.3em]">Official 2026 Edition</span>
             </div>
             
-            <!-- Sri Blak Logo (Main Title Spot) -->
+            <!-- Sri Blak Logo -->
             <img src="sri blak logo.png" alt="Sri Balbhadralal Arun Kumar Logo" class="title-logo mx-auto">
 
-            <h2 class="text-2xl md:text-5xl font-serif font-bold text-brand-purple mt-8 mb-12 tracking-tight uppercase italic">
+            <h2 class="text-2xl md:text-5xl font-serif font-bold text-brand-purple mt-6 mb-12 tracking-tight uppercase italic">
                 CREATE. POST. <span class="text-brand-pink underline decoration-4 underline-offset-8">WIN PRIZES.</span>
             </h2>
             
             <p class="text-base md:text-2xl text-slate-500 mb-12 max-w-3xl mx-auto font-medium leading-relaxed px-4">
-                Aapki creativity ko milega ek naya mukaam. Shop par aaiye, apni reels banaiye aur 2026 ke digital star baniye.
+                Aapki creativity ko milega ek naya stage. Sri Blak shop par aaiye, reels banaiye aur 2026 ke digital star baniye.
             </p>
 
-            <a href="https://forms.gle/gTw3uNax5UtE6n178" target="_blank" class="inline-block px-16 py-8 bg-brand-pink text-white text-2xl font-black rounded-full shadow-2xl shadow-pink-200 hover:bg-brand-purple transition uppercase tracking-tighter italic">
+            <a href="https://forms.gle/gTw3uNax5UtE6n178" target="_blank" class="inline-block px-16 py-8 bg-brand-pink text-white text-2xl font-black rounded-full shadow-2xl shadow-pink-200 hover:bg-brand-purple transition transform hover:-translate-y-2 uppercase tracking-tighter italic">
                 Nomination Register Karein 🚀
             </a>
             
             <div class="mt-24 flex flex-col items-center gap-6 opacity-90 border-t border-slate-200 pt-16">
                 <span class="text-[12px] font-black uppercase tracking-[0.5em] text-slate-400 italic">Digitally Powered by</span>
-                <!-- Enlarged Tripixel Partner Logo (3x Increased) -->
                 <img src="Tripixel Logo.png" alt="Tripixel Media" class="partner-logo mx-auto">
             </div>
         </div>
@@ -150,150 +151,125 @@
     <!-- Who Can Participate Section -->
     <section id="participants" class="bg-white py-20 px-4 border-b border-slate-100">
         <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-6xl font-serif font-black text-brand-dark uppercase mb-4 leading-tight">Who Can Participate?</h2>
-                <p class="text-brand-pink text-[10px] tracking-[0.3em] uppercase font-black italic">Open for all digital stars</p>
-            </div>
+            <h2 class="text-3xl md:text-6xl font-serif font-black text-brand-dark uppercase mb-16">Who Can Participate?</h2>
             
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
                 <div class="p-8 bg-slate-50 border border-slate-100 rounded-3xl text-center shadow-sm hover:border-brand-pink transition group">
                     <div class="text-5xl mb-4 group-hover:scale-110 transition">🤳</div>
                     <p class="text-xs font-black text-slate-700 uppercase tracking-widest">Content Creators</p>
-                    <p class="text-[9px] text-slate-400 italic mt-2">(Any Niche)</p>
                 </div>
                 <div class="p-8 bg-slate-50 border border-slate-100 rounded-3xl text-center shadow-sm hover:border-brand-pink transition group">
                     <div class="text-5xl mb-4 group-hover:scale-110 transition">🎭</div>
                     <p class="text-xs font-black text-slate-700 uppercase tracking-widest">Meme Pages</p>
-                    <p class="text-[9px] text-slate-400 italic mt-2">(Humour Experts)</p>
                 </div>
                 <div class="p-8 bg-slate-50 border border-slate-100 rounded-3xl text-center shadow-sm hover:border-brand-pink transition group">
                     <div class="text-5xl mb-4 group-hover:scale-110 transition">👠</div>
                     <p class="text-xs font-black text-slate-700 uppercase tracking-widest">Lifestyle</p>
-                    <p class="text-[9px] text-slate-400 italic mt-2">(Fashion Focus)</p>
                 </div>
                 <div class="p-8 bg-slate-50 border border-slate-100 rounded-3xl text-center shadow-sm hover:border-brand-pink transition group">
                     <div class="text-5xl mb-4 group-hover:scale-110 transition">📍</div>
                     <p class="text-xs font-black text-slate-700 uppercase tracking-widest">Local Pages</p>
-                    <p class="text-[9px] text-slate-400 italic mt-2">(City Guide)</p>
                 </div>
                 <div class="p-8 bg-slate-50 border border-slate-100 rounded-3xl text-center shadow-sm hover:border-brand-pink transition col-span-2 lg:col-span-1 mx-auto lg:mx-0 w-full group">
                     <div class="text-5xl mb-4 group-hover:scale-110 transition">🆕</div>
                     <p class="text-xs font-black text-slate-700 uppercase tracking-widest">Beginners</p>
-                    <p class="text-[9px] text-slate-400 italic mt-2">(No Min Followers)</p>
-                </div>
-            </div>
-            <div class="mt-12 bg-pink-50 border border-pink-100 inline-block p-4 rounded-2xl">
-                <p class="text-xs md:text-xl text-brand-pink font-black italic">✨ Creativity matters more than follower count!</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Event Roadmap Steps -->
-    <section id="steps" class="bg-slate-50 py-24 px-4 border-y border-slate-100">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl md:text-6xl font-serif font-black text-brand-dark uppercase mb-4 leading-tight">Event Roadmap</h2>
-            <p class="text-brand-purple text-sm uppercase tracking-widest font-black italic mb-16">Process mapping for creators</p>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-                <!-- Step 1 -->
-                <div class="p-8 bg-white border border-slate-100 rounded-3xl shadow-sm hover:border-brand-pink transition">
-                    <div class="step-bubble mx-auto mb-6 bg-brand-purple">1</div>
-                    <h3 class="text-brand-dark font-black uppercase mb-3 text-sm tracking-widest">Register</h3>
-                    <p class="text-[11px] text-slate-500 italic font-bold">Google Form bhariye aur apni details share karein.</p>
-                </div>
-                <!-- Step 2 -->
-                <div class="p-8 bg-white border border-slate-100 rounded-3xl shadow-sm hover:border-brand-pink transition">
-                    <div class="step-bubble mx-auto mb-6 bg-brand-pink">2</div>
-                    <h3 class="text-brand-dark font-black uppercase mb-3 text-sm tracking-widest">Confirmation</h3>
-                    <p class="text-[11px] text-slate-500 italic font-bold">Team aapka form check karke selection aur shoot date confirm karegi.</p>
-                </div>
-                <!-- Step 3 -->
-                <div class="p-8 bg-white border border-slate-100 rounded-3xl shadow-sm hover:border-brand-pink transition">
-                    <div class="step-bubble mx-auto mb-6 bg-brand-purple">3</div>
-                    <h3 class="text-brand-dark font-black uppercase mb-3 text-sm tracking-widest">The Shoot</h3>
-                    <p class="text-[11px] text-slate-500 italic font-bold">Assigned date par shop aakar apni reels shoot karein.</p>
-                </div>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Step 4 -->
-                <div class="p-8 bg-white border border-slate-100 rounded-3xl shadow-sm hover:border-brand-pink transition">
-                    <div class="step-bubble mx-auto mb-6 bg-brand-pink">4</div>
-                    <h3 class="text-brand-dark font-black uppercase mb-3 text-sm tracking-widest">Post & Track</h3>
-                    <p class="text-[11px] text-slate-500 italic font-bold">Reels upload karke humein tag karein aur views grow karein.</p>
-                </div>
-                <!-- Step 5 -->
-                <div class="p-8 bg-brand-pink rounded-3xl shadow-xl transition text-white">
-                    <div class="step-bubble mx-auto mb-6 bg-white text-brand-pink">5</div>
-                    <h3 class="font-black uppercase mb-3 text-sm tracking-widest">Results</h3>
-                    <p class="text-[11px] italic font-black">Scoring metrics ke basis par winners announce honge!</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Categories Section -->
-    <section id="topics" class="bg-white py-24 px-4 border-b border-slate-100">
-        <div class="max-w-7xl mx-auto text-center">
-            <h2 class="text-3xl md:text-6xl font-serif font-black text-brand-dark uppercase mb-4 leading-tight">Categories</h2>
-            <p class="text-brand-pink text-[10px] tracking-[0.3em] uppercase mb-16 font-black italic">Pick your theme and capture the market</p>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
-                <!-- Festive Traditions -->
-                <div class="bg-white p-8 rounded-[2rem] border-2 border-brand-pink shadow-sm hover:shadow-xl transition group">
-                    <div class="text-5xl mb-6 group-hover:scale-110 transition duration-300">🌙</div>
-                    <h3 class="text-brand-pink font-black uppercase mb-6 text-sm md:text-base border-b-2 border-pink-50 pb-4">Festive Traditions</h3>
-                    <ul class="text-[11px] md:text-xs space-y-4 text-slate-600 font-semibold italic leading-relaxed">
-                        <li class="flex gap-2"><span>✦</span> <strong>Outfit Reveal:</strong> Traditional wear transition reel.</li>
-                        <li><span>✦</span> <strong>Shopping Mood:</strong> Celebration shopping and gifts selection.</li>
-                        <li><span>✦</span> <strong>Family Relatable:</strong> Relatable festive shopping jokes/meme.</li>
-                    </ul>
-                </div>
-
-                <!-- Grand Celebration -->
-                <div class="bg-white p-8 rounded-[2rem] border-2 border-brand-purple shadow-sm hover:shadow-xl transition group">
-                    <div class="text-5xl mb-6 group-hover:scale-110 transition duration-300">💍</div>
-                    <h3 class="text-brand-purple font-black uppercase mb-6 text-sm md:text-base border-b-2 border-purple-50 pb-4">Grand Celebration</h3>
-                    <ul class="text-[11px] md:text-xs space-y-4 text-slate-600 font-semibold italic leading-relaxed">
-                        <li class="flex gap-2"><span>✦</span> <strong>Party Styling:</strong> Cinematic look for special events.</li>
-                        <li><span>✦</span> <strong>Guest Meme:</strong> Funny baraati or event group shopping.</li>
-                        <li><span>✦</span> <strong>Signature Stock:</strong> Showcase premium signature wear.</li>
-                    </ul>
-                </div>
-
-                <!-- Creative Fashion -->
-                <div class="bg-white p-8 rounded-[2rem] border-2 border-brand-dark shadow-sm hover:shadow-xl transition group">
-                    <div class="text-5xl mb-6 group-hover:scale-110 transition duration-300">📸</div>
-                    <h3 class="text-brand-dark font-black uppercase mb-6 text-sm md:text-base border-b-2 border-slate-50 pb-4">Creative Fashion</h3>
-                    <ul class="text-[11px] md:text-xs space-y-4 text-slate-600 font-semibold italic leading-relaxed">
-                        <li class="flex gap-2">✦ <strong>Expectation vs Reality:</strong> Relatable fashion fun angle.</li>
-                        <li>✦ <strong>Budget Challenge:</strong> Stylish look create karna in budget.</li>
-                        <li>✦ <strong>One Minute Tour:</strong> Fast walkthrough of whole shop.</li>
-                    </ul>
+    <!-- CONTENT CATEGORIES (PDF Content + Festive Special) -->
+    <section id="topics" class="bg-slate-50 py-24 px-4 border-y border-slate-100">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-6xl font-serif font-black text-brand-dark uppercase mb-4">Content Topics</h2>
+                <p class="text-brand-pink text-[12px] tracking-[0.3em] uppercase font-black italic">Choose ANY 3 topics for your reels</p>
+                <div class="mt-8 bg-brand-pink/5 p-4 rounded-xl inline-block border border-brand-pink/20">
+                    <p class="text-xs md:text-sm text-brand-pink font-bold italic">Instruction: Saari 3 videos ek hi visit mein shoot honi chahiye!</p>
                 </div>
             </div>
-            
-            <div class="mt-12 bg-slate-50 border border-slate-100 p-6 rounded-2xl inline-block">
-                <p class="text-xs md:text-sm text-brand-pink font-black italic uppercase tracking-wider leading-relaxed">Note: Minimum 1 reel banana mandatory hai (Aap 3 tak bana sakte hain).</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+                <!-- CATEGORY A -->
+                <div class="bg-white p-8 rounded-[2rem] border-2 border-brand-pink shadow-sm hover:shadow-xl transition">
+                    <h3 class="text-brand-pink font-black uppercase mb-6 text-sm border-b-2 border-pink-50 pb-4">Category A: Fashion Focused</h3>
+                    <ul class="text-[11px] space-y-4 text-slate-600 font-semibold italic">
+                        <li>✦ <strong>Outfit Transition:</strong> Before/After styling transformation.</li>
+                        <li>✦ <strong>Budget Look Challenge:</strong> Stylish look under a set budget.</li>
+                        <li>✦ <strong>Occasion Styling:</strong> Ideas for parties and daily wear.</li>
+                        <li>✦ <strong>Try & Decide:</strong> Trying outfits and choosing the best.</li>
+                        <li>✦ <strong>One Store, Many Styles:</strong> Showcase casual to formal variety.</li>
+                    </ul>
+                </div>
+
+                <!-- CATEGORY B -->
+                <div class="bg-white p-8 rounded-[2rem] border-2 border-brand-purple shadow-sm hover:shadow-xl transition">
+                    <h3 class="text-brand-purple font-black uppercase mb-6 text-sm border-b-2 border-purple-50 pb-4">Category B: Meme & Relatable</h3>
+                    <ul class="text-[11px] space-y-4 text-slate-600 font-semibold italic">
+                        <li>✦ <strong>Expectation vs Reality:</strong> Fun fashion edition comparisons.</li>
+                        <li>✦ <strong>Desi Family Shopping:</strong> Relatable Indian family humour.</li>
+                        <li>✦ <strong>Salary aayi, Shopping gayi:</strong> Budget shopping humour.</li>
+                        <li>✦ <strong>Fashion Problems:</strong> Common clothing issues shown funnily.</li>
+                        <li>✦ <strong>POV Meme:</strong> "Entered SBLAK just to browse..." mood.</li>
+                    </ul>
+                </div>
+
+                <!-- CATEGORY C -->
+                <div class="bg-white p-8 rounded-[2rem] border-2 border-brand-dark shadow-sm hover:shadow-xl transition">
+                    <h3 class="text-brand-dark font-black uppercase mb-6 text-sm border-b-2 border-slate-50 pb-4">Category C: Store Experience</h3>
+                    <ul class="text-[11px] space-y-4 text-slate-600 font-semibold italic">
+                        <li>✦ <strong>First Visit Experience:</strong> Genuine reaction & walkthrough.</li>
+                        <li>✦ <strong>Hidden Gems:</strong> Showcasing underrated products.</li>
+                        <li>✦ <strong>Why Local Stores Matter:</strong> Emotional storytelling.</li>
+                        <li>✦ <strong>Outside to Inside Transition:</strong> Entry shot reveal.</li>
+                        <li>✦ <strong>One Minute Tour:</strong> Fast-paced store walkthrough.</li>
+                    </ul>
+                </div>
+
+                <!-- CATEGORY D -->
+                <div class="bg-white p-8 rounded-[2rem] border-2 border-brand-pink shadow-sm hover:shadow-xl transition">
+                    <h3 class="text-brand-pink font-black uppercase mb-6 text-sm border-b-2 border-pink-50 pb-4">Category D: Voiceover Content</h3>
+                    <ul class="text-[11px] space-y-4 text-slate-600 font-semibold italic">
+                        <li>✦ <strong>Honest Review:</strong> Your genuine opinion after shopping.</li>
+                        <li>✦ <strong>Styling Tips:</strong> Professional advice on styling outfits.</li>
+                        <li>✦ <strong>Shopping Guide:</strong> What to buy for different seasons.</li>
+                        <li>✦ <strong>Fashion Advice:</strong> Do's & Don'ts while shopping.</li>
+                        <li>✦ <strong>Brand Appreciation:</strong> Emotional brand story voiceover.</li>
+                    </ul>
+                </div>
+
+                <!-- CATEGORY E: FESTIVE & WEDDING (Special Add-on) -->
+                <div class="bg-white p-8 rounded-[2rem] border-2 border-brand-purple shadow-sm hover:shadow-xl transition">
+                    <div class="flex items-center gap-3 mb-6 border-b-2 border-purple-50 pb-4">
+                        <span class="text-2xl">🌙💍</span>
+                        <h3 class="text-brand-purple font-black uppercase text-sm">Festive & Wedding Specials</h3>
+                    </div>
+                    <ul class="text-[11px] space-y-4 text-slate-600 font-semibold italic">
+                        <li>✦ <strong>Eid Festive Reveal:</strong> Spotlight on traditional Eid collection.</li>
+                        <li>✦ <strong>Grand Wedding Guest:</strong> Styling for the wedding season.</li>
+                        <li>✦ <strong>Ethnic Signature:</strong> Premium traditional wear walkthrough.</li>
+                        <li>✦ <strong>The Festive Rush:</strong> Vibe of shopping during big seasons.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Scoring Section -->
-    <section id="scoring" class="bg-slate-50 py-24 px-4 border-y border-slate-100 text-center">
+    <section id="scoring" class="bg-white py-24 px-4 border-y border-slate-100 text-center">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-3xl md:text-6xl font-serif font-black text-slate-900 mb-4 uppercase tracking-tighter">Scoring Metrics</h2>
-            <p class="text-[10px] text-brand-pink tracking-[0.3em] uppercase mb-16 font-black italic">Fair judgment based on 100 Points</p>
+            <p class="text-brand-pink text-[10px] tracking-[0.3em] uppercase mb-16 font-black italic">Total 100 Points Breakdown</p>
             
             <div class="grid md:grid-cols-2 gap-12 items-start text-left max-w-5xl mx-auto">
                 <div class="space-y-4">
-                    <div class="p-6 bg-white border border-slate-100 rounded-3xl shadow-sm">
+                    <div class="p-6 bg-slate-50 border border-slate-100 rounded-3xl shadow-sm">
                         <p class="text-[10px] text-brand-pink uppercase font-black mb-3 italic">Reach Factor (40 Points)</p>
                         <div class="math-container">
                             <img src="https://latex.codecogs.com/svg.latex?Score%20%3D%20%5Cleft(%20%5Cfrac%7BAapke%20Views%7D%7BHighest%20Views%7D%20%5Cright)%20%5Ctimes%2040" alt="Reach Formula" class="formula-img">
                         </div>
                     </div>
-                    <div class="p-6 bg-white border border-slate-100 rounded-3xl shadow-sm">
+                    <div class="p-6 bg-slate-50 border border-slate-100 rounded-3xl shadow-sm">
                         <p class="text-[10px] text-brand-purple uppercase font-black mb-3 italic">Engagement Factor (30 Points)</p>
                         <div class="math-container">
                             <img src="https://latex.codecogs.com/svg.latex?Score%20%3D%20%5Cleft(%20%5Cfrac%7BAapka%20Engagement%7D%7BHighest%20Engagement%7D%20%5Cright)%20%5Ctimes%2030" alt="Engagement Formula" class="formula-img">
@@ -303,12 +279,10 @@
                         <div class="p-6 bg-pink-50 border border-brand-pink/20 rounded-2xl text-center">
                             <p class="text-[9px] font-black text-brand-pink uppercase mb-1">Creativity</p>
                             <p class="text-3xl font-black text-brand-dark">20 Pts</p>
-                            <p class="text-[9px] text-slate-400 italic font-black uppercase">Alignment</p>
                         </div>
                         <div class="p-6 bg-purple-50 border border-brand-purple/20 rounded-2xl text-center">
                             <p class="text-[9px] font-black text-brand-purple uppercase mb-1">Discipline</p>
                             <p class="text-3xl font-black text-brand-dark">10 Pts</p>
-                            <p class="text-[9px] text-slate-400 italic font-black uppercase">Compliance</p>
                         </div>
                     </div>
                 </div>
@@ -316,22 +290,10 @@
                 <div class="bg-white p-10 border-4 border-brand-pink rounded-[3rem] shadow-2xl shadow-pink-100 h-full flex flex-col justify-center">
                     <h4 class="font-serif font-black text-xl mb-6 text-slate-900 border-b-2 border-slate-100 pb-4 text-center uppercase italic">Final Sum Breakdown:</h4>
                     <div class="space-y-4 text-sm font-bold italic text-slate-500">
-                        <div class="flex justify-between border-b border-slate-50 pb-3">
-                            <span>Reach Metric</span>
-                            <span class="text-brand-pink">40 Points</span>
-                        </div>
-                        <div class="flex justify-between border-b border-slate-50 pb-3">
-                            <span>Engagement Metric</span>
-                            <span class="text-brand-pink">30 Points</span>
-                        </div>
-                        <div class="flex justify-between border-b border-slate-50 pb-3">
-                            <span>Creativity & Brand Alignment</span>
-                            <span class="text-brand-purple">20 Points</span>
-                        </div>
-                        <div class="flex justify-between border-b border-slate-50 pb-3">
-                            <span>Discipline & Rule Compliance</span>
-                            <span class="text-brand-purple">10 Points</span>
-                        </div>
+                        <div class="flex justify-between border-b border-slate-50 pb-3"><span>Reach Metric</span><span class="text-brand-pink">40 Pts</span></div>
+                        <div class="flex justify-between border-b border-slate-50 pb-3"><span>Engagement Metric</span><span class="text-brand-pink">30 Pts</span></div>
+                        <div class="flex justify-between border-b border-slate-50 pb-3"><span>Creativity & Brand Alignment</span><span class="text-brand-purple">20 Pts</span></div>
+                        <div class="flex justify-between border-b border-slate-50 pb-3"><span>Discipline & Compliance</span><span class="text-brand-purple">10 Pts</span></div>
                         <div class="mt-8 bg-brand-dark p-6 text-white text-center font-black uppercase tracking-widest text-2xl rounded-2xl shadow-lg">Total Score: 100</div>
                     </div>
                 </div>
@@ -339,53 +301,41 @@
         </div>
     </section>
 
-    <!-- Final Contact Us Segment (Light Theme) -->
-    <section id="contact" class="py-24 px-4 bg-white relative overflow-hidden border-t border-slate-100">
+    <!-- Contact Us Section -->
+    <section id="contact" class="py-24 px-4 bg-white relative overflow-hidden border-t border-slate-100 text-left">
         <div class="max-w-6xl mx-auto relative z-10">
             <h2 class="text-3xl md:text-8xl font-serif font-black text-brand-pink mb-24 italic uppercase tracking-tighter text-center">Contact Us</h2>
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-                <!-- Branding & Support (Enlarged Tripixel) -->
-                <div class="text-left space-y-16">
-                    <div class="space-y-8">
-                        <p class="text-[12px] text-brand-purple uppercase tracking-[0.5em] font-black italic">Digitally Managed By</p>
-                        <div class="flex flex-col items-start gap-8">
-                            <!-- Huge Tripixel Logo (3x) -->
-                            <img src="Tripixel Logo.png" alt="Tripixel Marketing" class="contact-logo">
-                            <span class="font-serif font-black text-5xl text-brand-dark tracking-tighter italic uppercase leading-none">Tripixel Media</span>
+                <div class="space-y-12">
+                    <div>
+                        <p class="text-[11px] text-brand-purple uppercase tracking-[0.5em] font-black italic mb-4">Digitally Managed By</p>
+                        <div class="flex items-center gap-6">
+                            <img src="Tripixel Logo.png" alt="Tripixel" class="contact-logo">
+                            <span class="font-serif font-black text-5xl text-brand-dark uppercase italic">Tripixel Media</span>
                         </div>
                     </div>
-
-                    <div class="space-y-10">
-                        <p class="text-[12px] text-brand-pink uppercase tracking-[0.4em] font-black italic font-bold">24/7 Support Helpline</p>
+                    <div>
+                        <p class="text-[11px] text-brand-pink uppercase tracking-[0.4em] font-black italic font-bold mb-4">24/7 Support Helpline</p>
                         <a href="tel:6206459531" class="flex items-center gap-6 group">
-                            <span class="p-6 bg-brand-pink rounded-full text-white text-4xl shadow-[0_10px_30px_rgba(240,42,166,0.5)] group-hover:bg-brand-purple transition duration-300">
-                                <i class="fas fa-phone-alt"></i>
-                            </span>
-                            <span class="font-mono text-4xl md:text-7xl font-black text-brand-dark tracking-tighter italic underline decoration-brand-pink decoration-2 underline-offset-8">
-                                6206459531
-                            </span>
+                            <span class="p-6 bg-brand-pink rounded-full text-white text-4xl shadow-xl group-hover:bg-brand-purple transition"><i class="fas fa-phone-alt"></i></span>
+                            <span class="font-mono text-4xl md:text-7xl font-black text-brand-dark tracking-tighter underline decoration-brand-pink decoration-2 underline-offset-8">6206459531</span>
                         </a>
                     </div>
                 </div>
 
-                <!-- Socials & Identity -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-10 text-left">
-                    <div class="p-12 bg-slate-50 rounded-[2.5rem] border border-slate-100 hover:border-brand-pink transition duration-300 shadow-sm group">
-                        <img src="sri blak logo.png" alt="Sri Blak Shop" class="h-24 mb-6 group-hover:scale-105 transition">
-                        <p class="text-[12px] text-slate-500 uppercase tracking-widest font-black mb-4 leading-tight">Sri Balbhadralal<br>Arun Kumar</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 text-left">
+                    <div class="p-10 bg-slate-50 rounded-[2.5rem] border border-slate-100 hover:border-brand-pink transition duration-300 shadow-sm group">
+                        <img src="sri blak logo.png" alt="Sri Blak" class="h-16 mb-6 group-hover:scale-105 transition">
                         <div class="flex gap-8">
-                            <a href="https://www.instagram.com/sri_balbhadralal_arun_kumar?igsh=MTRianloMG45OTFjag==" target="_blank" class="text-4xl text-brand-pink hover:text-brand-purple transition transform hover:scale-110"><i class="fab fa-instagram"></i></a>
-                            <a href="https://www.facebook.com/share/1He8yDtGzV/" target="_blank" class="text-4xl text-blue-600 hover:text-brand-purple transition transform hover:scale-110"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/sri_balbhadralal_arun_kumar?igsh=MTRianloMG45OTFjag==" target="_blank" class="text-4xl text-brand-pink hover:text-brand-purple transition"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/share/1He8yDtGzV/" target="_blank" class="text-4xl text-blue-600 hover:text-brand-purple transition"><i class="fab fa-facebook"></i></a>
                         </div>
                     </div>
-
-                    <div class="p-12 bg-slate-50 rounded-[2.5rem] border border-slate-100 hover:border-brand-purple transition duration-300 shadow-sm group">
-                        <!-- Huge Tripixel Logo in Social box -->
-                        <img src="Tripixel Logo.png" alt="Tripixel Agency" class="h-24 mb-6 group-hover:scale-105 transition">
-                        <p class="text-[12px] text-slate-500 uppercase tracking-widest font-black mb-4 leading-tight">Tripixel Media<br>Agency Partner</p>
+                    <div class="p-10 bg-slate-50 rounded-[2.5rem] border border-slate-100 hover:border-brand-purple transition duration-300 shadow-sm group">
+                        <img src="Tripixel Logo.png" alt="Tripixel" class="h-16 mb-6 group-hover:scale-105 transition">
                         <div class="flex gap-8">
-                            <a href="https://www.instagram.com/tripixel_media?igsh=ZndjbnI3YnczM3h0" target="_blank" class="text-4xl text-brand-purple hover:text-brand-pink transition transform hover:scale-110"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.instagram.com/tripixel_media?igsh=ZndjbnI3YnczM3h0" target="_blank" class="text-4xl text-brand-purple hover:text-brand-pink transition"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
@@ -396,14 +346,13 @@
     <!-- Footer -->
     <footer class="py-24 bg-slate-50 text-center border-t border-slate-100 px-4">
         <div class="flex justify-center items-center gap-12 md:gap-24 opacity-100 mb-16 flex-wrap">
-            <!-- Order of enlarged logos in footer (3x size) -->
-            <img src="sri blak logo.png" alt="Sri Blak Logo" class="footer-logo">
-            <div class="hidden md:block h-20 w-px bg-slate-300"></div>
-            <img src="Tripixel Logo.png" alt="Tripixel Logo" class="footer-logo">
+            <img src="sri blak logo.png" alt="Sri Blak" class="footer-logo">
+            <div class="hidden md:block h-20 w-px bg-slate-200"></div>
+            <img src="Tripixel Logo.png" alt="Tripixel" class="footer-logo">
             <div class="hidden md:block h-20 w-px bg-slate-200"></div>
             <img src="Creator Contest Logo.png" alt="Contest Logo" class="footer-logo">
         </div>
-        <p class="text-slate-400 text-[12px] uppercase tracking-[0.4em] font-black italic max-w-xl mx-auto text-center leading-relaxed">
+        <p class="text-slate-400 text-[11px] uppercase tracking-[0.4em] font-black italic max-w-xl mx-auto leading-relaxed">
             © 2026 Sri Balbhadralal Arun Kumar • All Rights Reserved • Digitally Managed by Tripixel Media
         </p>
     </footer>
