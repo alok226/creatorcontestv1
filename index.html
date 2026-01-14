@@ -8,17 +8,19 @@
     <!-- External Assets -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        gold: {
-                            light: '#f4ecdb',
-                            DEFAULT: '#cda25e',
-                            dark: '#965f34',
-                            bright: '#ffd700'
+                        brand: {
+                            purple: '#6d28d9', /* Solid Logo Purple */
+                            pink: '#f02aa6',   /* Solid Logo Pink */
+                            dark: '#0f172a',   
+                            light: '#f8fafc'   
                         }
                     },
                     fontFamily: {
@@ -30,407 +32,381 @@
         }
     </script>
     <style>
-        /* Google Sites Iframe Reset */
         html { margin: 0; padding: 0; overflow-x: hidden; height: auto; scroll-behavior: smooth; }
         body { 
             margin: 0; 
             padding: 0; 
             width: 100%; 
             font-family: 'Inter', sans-serif; 
-            background-color: #050505; 
-            color: #fff; 
+            background-color: #ffffff; 
+            color: #1e293b; 
             line-height: 1.5;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
         
-        .gold-text-gradient {
-            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .award-border {
-            border: 1px solid;
-            border-image: linear-gradient(to right, #bf953f, #fcf6ba, #aa771c) 1;
-        }
-        .gold-glow {
-            box-shadow: 0 0 15px rgba(205, 162, 94, 0.2);
-        }
+        /* Logo Styling */
+        .nav-logo { height: 50px; width: auto; object-fit: contain; }
+        .hero-logo { height: 110px; width: auto; object-fit: contain; margin-bottom: 25px; }
+        .contact-logo { height: 50px; width: auto; object-fit: contain; }
+        .footer-logo { height: 45px; width: auto; object-fit: contain; }
         
-        section { padding-top: 4rem; padding-bottom: 4rem; position: relative; }
+        section { padding-top: 5rem; padding-bottom: 5rem; position: relative; }
         @media (max-width: 768px) {
-            section { padding-top: 3rem; padding-bottom: 3rem; }
+            section { padding-top: 3.5rem; padding-bottom: 3.5rem; }
             .hero-title { font-size: 2.8rem !important; line-height: 1.1 !important; }
-            .hero-sub { font-size: 1.1rem !important; margin-bottom: 2rem !important; }
+            .hero-sub { font-size: 1.2rem !important; }
         }
         
         .nav-scroll::-webkit-scrollbar { display: none; }
-        .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
 
-        /* Stable Formula Layout (Using Image for Google Sites compatibility) */
+        /* Scoring & UI Components */
+        .step-bubble {
+            width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; background: #f02aa6; color: white; font-weight: 900; font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(240, 42, 166, 0.3);
+        }
         .math-container {
             width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 15px 5px;
-            background: rgba(255,255,255,0.03);
-            border-radius: 8px;
+            background: #fdf2f8;
+            border-radius: 12px;
             margin: 10px 0;
-            min-height: 50px;
+            border: 1px solid #f02aa615;
         }
-        .formula-img {
-            max-width: 90%;
-            height: auto;
-            filter: brightness(0) invert(1);
-        }
+        .formula-img { max-width: 85%; height: auto; }
     </style>
 </head>
 <body class="text-center">
 
     <!-- Navigation Bar -->
-    <nav class="fixed top-0 w-full z-50 bg-black/95 backdrop-blur-lg border-b border-gold/20">
-        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-            <div class="flex flex-col text-left">
-                <span class="font-serif font-black text-xl gold-text-gradient uppercase tracking-tighter leading-tight">Sri Blak</span>
-                <span class="text-[7px] uppercase tracking-[0.3em] text-white/60 font-bold italic leading-none">Contest 2026</span>
+    <nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3 text-left">
+                <!-- Creator Contest Logo -->
+                <img src="Creator Contest Logo.png" alt="Creator Contest" class="nav-logo">
+                <div class="flex flex-col">
+                    <span class="font-serif font-black text-2xl text-brand-pink uppercase tracking-tighter leading-tight">Sri Blak</span>
+                    <span class="text-[8px] uppercase tracking-[0.3em] text-brand-purple font-bold italic leading-none">Contest 2026</span>
+                </div>
             </div>
-            <!-- Desktop Links -->
-            <div class="hidden md:flex gap-6 text-[10px] uppercase font-bold tracking-widest text-gold-light/60">
-                <a href="#about" class="hover:text-gold transition">About</a>
-                <a href="#participants" class="hover:text-gold transition">Who</a>
-                <a href="#topics" class="hover:text-gold transition">Topics</a>
-                <a href="#rules" class="hover:text-gold transition">Rules</a>
-                <a href="#scoring" class="hover:text-gold transition">Scoring</a>
-                <a href="#contact" class="hover:text-gold transition">Contact</a>
+            <!-- Links -->
+            <div class="hidden md:flex gap-8 text-[11px] uppercase font-black tracking-widest text-slate-500">
+                <a href="#about" class="hover:text-brand-pink transition">About</a>
+                <a href="#steps" class="hover:text-brand-pink transition">Steps</a>
+                <a href="#topics" class="hover:text-brand-pink transition">Categories</a>
+                <a href="#contact" class="hover:text-brand-pink transition">Contact</a>
             </div>
-            <a href="#register" class="bg-gold text-black px-4 py-1.5 text-[9px] font-black uppercase tracking-widest hover:scale-105 transition rounded-sm">
+            <a href="https://forms.gle/QTVXdiz8fhmHmCad6" target="_blank" class="bg-brand-pink text-white px-6 py-2.5 text-[10px] font-black uppercase tracking-widest hover:bg-brand-purple transition rounded-full shadow-lg shadow-pink-200">
                 Register Now
             </a>
-        </div>
-        <!-- Mobile Navigation -->
-        <div class="md:hidden flex overflow-x-auto nav-scroll gap-6 px-4 py-2 border-t border-white/5 text-[9px] uppercase font-bold text-white/40 no-scrollbar">
-            <a href="#about" class="whitespace-nowrap">About</a>
-            <a href="#participants" class="whitespace-nowrap">Who</a>
-            <a href="#topics" class="whitespace-nowrap">Topics</a>
-            <a href="#rules" class="whitespace-nowrap">Rules</a>
-            <a href="#scoring" class="whitespace-nowrap">Scoring</a>
-            <a href="#contact" class="whitespace-nowrap">Contact</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center px-4 pt-20">
-        <div class="absolute inset-0 opacity-20 pointer-events-none">
-            <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=2000" class="w-full h-full object-cover" alt="Award Stage">
-        </div>
-        <div class="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-[#050505] pointer-events-none"></div>
-        
+    <section class="relative min-h-screen flex items-center justify-center px-4 pt-24 bg-slate-50">
         <div class="max-w-5xl mx-auto text-center relative z-10 py-12">
-            <div class="inline-block px-4 py-1 mb-8 award-border bg-white/5 backdrop-blur-sm">
-                <span class="text-gold text-[10px] font-black uppercase tracking-[0.3em]">Sri Balbhadralal Arun Kumar Presents</span>
+            <!-- sri blak logo -->
+            <img src="sri blak logo.png" alt="Sri Balbhadralal Arun Kumar" class="hero-logo mx-auto">
+            
+            <div class="inline-block px-5 py-1.5 mb-8 rounded-full border-2 border-brand-pink bg-white shadow-sm">
+                <span class="text-brand-pink text-[11px] font-black uppercase tracking-[0.2em]">Official 2026 Edition</span>
             </div>
             
-            <h1 class="hero-title text-5xl md:text-8xl font-serif font-black text-white mb-4 leading-none tracking-tighter">
-                CREATOR CONTEST <br>
-                <span class="gold-text-gradient italic font-black">BY SRI BLAK</span>
+            <h1 class="hero-title text-6xl md:text-9xl font-serif font-black text-slate-900 mb-4 leading-none tracking-tighter">
+                CREATOR <span class="text-brand-pink italic">CONTEST</span> <br>
+                BY SRI BLAK
             </h1>
 
-            <h2 class="hero-sub text-xl md:text-4xl font-serif font-bold text-gold-light mb-12 tracking-[0.1em] uppercase">
-                CREATE. POST. WIN PRIZES.
+            <h2 class="hero-sub text-xl md:text-5xl font-serif font-bold text-brand-purple mb-12 tracking-tight uppercase">
+                CREATE. POST. <span class="text-brand-pink underline decoration-4 underline-offset-8">WIN PRIZES.</span>
             </h2>
             
-            <p class="text-base md:text-2xl text-slate-400 mb-12 max-w-2xl mx-auto font-light leading-relaxed italic px-4">
-                Join the ultimate creator hunt at <span class="text-white font-semibold italic">Sri Balbhadralal Arun Kumar shop</span>. Reels banao, post karo, aur 2026 ke star bano!
+            <p class="text-base md:text-2xl text-slate-500 mb-12 max-w-3xl mx-auto font-medium leading-relaxed px-4">
+                Aapki creativity ko milega ek naya mukaam. <span class="text-brand-purple font-black italic">Sri Balbhadralal Arun Kumar shop</span> par aaiye, reels banaiye aur 2026 ke digital star baniye.
             </p>
 
-            <a href="#register" class="inline-block px-12 py-5 bg-gold text-black text-xl font-black rounded-sm shadow-[0_0_30px_rgba(205,162,94,0.4)] hover:scale-105 transition uppercase tracking-tighter italic">
-                Aao Contest Join Karein 🚀
+            <a href="https://forms.gle/QTVXdiz8fhmHmCad6" target="_blank" class="inline-block px-14 py-6 bg-brand-pink text-white text-xl font-black rounded-full shadow-2xl shadow-pink-200 hover:bg-brand-purple transition uppercase tracking-tighter italic">
+                Join Contest Now 🚀
             </a>
             
-            <p class="mt-8 text-gold/40 text-[10px] font-bold tracking-[0.5em] uppercase italic">Powered by Tripixel Media</p>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="bg-[#0a0a0a] border-y border-gold/10 px-4 py-20">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div class="space-y-8 text-left">
-                <h2 class="text-4xl md:text-6xl font-serif font-bold text-white leading-tight">
-                    Ye Contest <span class="gold-text-gradient italic">Kya Hai?</span>
-                </h2>
-                <p class="text-slate-400 text-base md:text-lg leading-relaxed">
-                    Aapko hamari <strong>Sri Balbhadralal Arun Kumar shop</strong> mein aakar <span class="text-gold font-bold italic">kam se kam 1 Reel shoot karni hai (aap 3 tak bana sakte hain)</span>. Single visit mein shooting poori karein aur apne talent se inaam jeetein!
-                </p>
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="p-5 bg-white/5 border border-gold-200/20 rounded-lg award-border">
-                        <p class="text-gold font-bold text-sm uppercase text-center leading-none">Min 1 Reel</p>
-                        <p class="text-[10px] text-slate-500 mt-2 italic text-center">Flexible Participation</p>
-                    </div>
-                    <div class="p-5 bg-white/5 border border-gold-200/20 rounded-lg award-border">
-                        <p class="text-gold font-bold text-sm uppercase text-center leading-none">Single Visit</p>
-                        <p class="text-[10px] text-slate-500 mt-2 italic text-center">Shoot in 1 Day</p>
-                    </div>
-                </div>
-            </div>
-            <div class="relative group hidden md:block">
-                <div class="border border-gold/30 p-2 bg-gold/5 rounded-lg gold-glow">
-                    <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&q=80&w=800" class="w-full rounded-sm grayscale group-hover:grayscale-0 transition duration-700" alt="Shop View">
-                </div>
+            <div class="mt-16 flex flex-col items-center gap-4 opacity-80">
+                <span class="text-[10px] font-black uppercase tracking-[0.5em] text-slate-400">Marketing Partner</span>
+                <!-- Tripixel Logo -->
+                <img src="Tripixel Logo.png" alt="Tripixel Media" class="h-10 mx-auto">
             </div>
         </div>
     </section>
 
-    <!-- WHO CAN PARTICIPATE -->
-    <section id="participants" class="bg-black py-20 px-4 border-b border-gold/10">
+    <!-- Who Can Participate Section -->
+    <section id="participants" class="bg-white py-20 px-4 border-b border-slate-100">
         <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-5xl font-serif font-bold italic gold-text-gradient uppercase">Kaun Hissa Le Sakta Hai?</h2>
-                <p class="text-[8px] text-white/40 tracking-[0.4em] uppercase mt-2">Open for all digital stars</p>
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-6xl font-serif font-black text-brand-dark uppercase mb-4">Who Can Participate?</h2>
+                <p class="text-brand-pink text-[10px] tracking-[0.3em] uppercase font-black italic">Open for all digital stars</p>
             </div>
             
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                <div class="p-6 bg-white/5 border border-gold/20 rounded-xl award-border text-center">
-                    <div class="text-3xl mb-3">🤳</div>
-                    <p class="text-xs font-bold text-white uppercase tracking-wider leading-tight">Content Creators</p>
-                    <p class="text-[8px] text-slate-500 italic mt-1">(Any Niche)</p>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                <div class="p-8 bg-slate-50 border border-slate-100 rounded-3xl text-center shadow-sm hover:border-brand-pink transition group">
+                    <div class="text-4xl mb-3 group-hover:scale-110 transition">🤳</div>
+                    <p class="text-xs font-black text-slate-700 uppercase tracking-widest">Content Creators</p>
+                    <p class="text-[9px] text-slate-400 italic mt-2">(Any Niche)</p>
                 </div>
-                <div class="p-6 bg-white/5 border border-gold/20 rounded-xl award-border text-center">
-                    <div class="text-3xl mb-3">🎭</div>
-                    <p class="text-xs font-bold text-white uppercase tracking-wider leading-tight">Meme Pages</p>
-                    <p class="text-[8px] text-slate-500 italic mt-1">(Humour Experts)</p>
+                <div class="p-8 bg-slate-50 border border-slate-100 rounded-3xl text-center shadow-sm hover:border-brand-pink transition group">
+                    <div class="text-4xl mb-3 group-hover:scale-110 transition">🎭</div>
+                    <p class="text-xs font-black text-slate-700 uppercase tracking-widest">Meme Pages</p>
+                    <p class="text-[9px] text-slate-400 italic mt-2">(Humour Experts)</p>
                 </div>
-                <div class="p-6 bg-white/5 border border-gold/20 rounded-xl award-border text-center">
-                    <div class="text-3xl mb-3">📍</div>
-                    <p class="text-xs font-bold text-white uppercase tracking-wider leading-tight">Local Pages</p>
-                    <p class="text-[8px] text-slate-500 italic mt-1">(City Guide)</p>
+                <div class="p-8 bg-slate-50 border border-slate-100 rounded-3xl text-center shadow-sm hover:border-brand-pink transition group">
+                    <div class="text-4xl mb-3 group-hover:scale-110 transition">👠</div>
+                    <p class="text-xs font-black text-slate-700 uppercase tracking-widest">Lifestyle</p>
+                    <p class="text-[9px] text-slate-400 italic mt-2">(Fashion Focus)</p>
                 </div>
-                <div class="p-6 bg-white/5 border border-gold/20 rounded-xl award-border text-center">
-                    <div class="text-3xl mb-3">👗</div>
-                    <p class="text-xs font-bold text-white uppercase tracking-wider leading-tight">Fashion Lovers</p>
-                    <p class="text-[8px] text-slate-500 italic mt-1">(Lifestyle)</p>
+                <div class="p-8 bg-slate-50 border border-slate-100 rounded-3xl text-center shadow-sm hover:border-brand-pink transition group">
+                    <div class="text-4xl mb-3 group-hover:scale-110 transition">📍</div>
+                    <p class="text-xs font-black text-slate-700 uppercase tracking-widest">Local Pages</p>
+                    <p class="text-[9px] text-slate-400 italic mt-2">(City Guide)</p>
                 </div>
-                <div class="p-6 bg-white/5 border border-gold/20 rounded-xl award-border text-center col-span-2 lg:col-span-1 mx-auto lg:mx-0 w-full">
-                    <div class="text-3xl mb-3">🆕</div>
-                    <p class="text-xs font-bold text-white uppercase tracking-wider leading-tight">Beginners</p>
-                    <p class="text-[8px] text-slate-500 italic mt-1">(Any Followers)</p>
+                <div class="p-8 bg-slate-50 border border-slate-100 rounded-3xl text-center shadow-sm hover:border-brand-pink transition col-span-2 lg:col-span-1 mx-auto lg:mx-0 w-full group">
+                    <div class="text-4xl mb-3 group-hover:scale-110 transition">🆕</div>
+                    <p class="text-xs font-black text-slate-700 uppercase tracking-widest">Beginners</p>
+                    <p class="text-[9px] text-slate-400 italic mt-2">(No Min Followers)</p>
                 </div>
             </div>
-            <div class="mt-12 text-center">
-                <div class="inline-block p-4 award-border bg-gold/5">
-                    <p class="text-xs md:text-base text-gold-light font-black italic">✨ Creativity matters more than follower count!</p>
+            <div class="mt-12 bg-pink-50 border border-pink-100 inline-block p-4 rounded-2xl">
+                <p class="text-xs md:text-lg text-brand-pink font-black italic">✨ Creativity matters more than follower count!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Roadmap Steps -->
+    <section id="steps" class="bg-slate-50 py-24 px-4 border-y border-slate-100">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-6xl font-serif font-black text-brand-dark uppercase mb-4">Event Roadmap</h2>
+            <p class="text-brand-purple text-sm uppercase tracking-widest font-black italic mb-16">Kis step ke baad kya hoga?</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <!-- Step 1 -->
+                <div class="p-8 bg-white border border-slate-100 rounded-3xl shadow-sm hover:border-brand-pink transition">
+                    <div class="step-bubble mx-auto mb-6 bg-brand-purple">1</div>
+                    <h3 class="text-brand-dark font-black uppercase mb-3 text-sm">Register Online</h3>
+                    <p class="text-[11px] text-slate-500 italic font-semibold">Google Form bhariye aur apni basic details aur topics share karein.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="p-8 bg-white border border-slate-100 rounded-3xl shadow-sm hover:border-brand-pink transition">
+                    <div class="step-bubble mx-auto mb-6 bg-brand-pink">2</div>
+                    <h3 class="text-brand-dark font-black uppercase mb-3 text-sm">Confirmation</h3>
+                    <p class="text-[11px] text-slate-500 italic font-semibold">Selected creators ko hamari team call par selection aur shoot date confirm karegi.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="p-8 bg-white border border-slate-100 rounded-3xl shadow-sm hover:border-brand-pink transition">
+                    <div class="step-bubble mx-auto mb-6 bg-brand-purple">3</div>
+                    <h3 class="text-brand-dark font-black uppercase mb-3 text-sm">The Shoot</h3>
+                    <p class="text-[11px] text-slate-500 italic font-semibold">Assigned date par <strong>Sri Blak shop</strong> aakar apni reels shoot karein.</p>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Step 4 -->
+                <div class="p-8 bg-white border border-slate-100 rounded-3xl shadow-sm hover:border-brand-pink transition">
+                    <div class="step-bubble mx-auto mb-6 bg-brand-pink">4</div>
+                    <h3 class="text-brand-dark font-black uppercase mb-3 text-sm">Post & Track</h3>
+                    <p class="text-[11px] text-slate-500 italic font-semibold">Reels ko 7 din mein upload karke humein tag karein aur views grow karein.</p>
+                </div>
+                <!-- Step 5 -->
+                <div class="p-8 bg-brand-pink rounded-3xl shadow-xl transition text-white">
+                    <div class="step-bubble mx-auto mb-6 bg-white text-brand-pink">5</div>
+                    <h3 class="font-black uppercase mb-3 text-sm">Grand Prize</h3>
+                    <p class="text-[11px] italic font-bold">Scoring metrics ke basis par winners announce honge aur rewards milenge!</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CONTENT TOPICS LIST -->
-    <section id="topics" class="bg-[#050505] py-20 px-4">
+    <!-- Categories Section -->
+    <section id="topics" class="bg-white py-24 px-4 border-b border-slate-100">
         <div class="max-w-7xl mx-auto text-center">
-            <h2 class="text-3xl md:text-6xl font-serif font-bold italic gold-text-gradient mb-8 uppercase">Content Topic List</h2>
-            <div class="mb-12 p-4 border-l-4 border-gold bg-gold/5 inline-block text-left rounded-r-xl max-w-2xl">
-                <p class="text-xs md:text-sm text-gold-light font-medium leading-relaxed italic">
-                    <strong>Instruction:</strong> Aap apni Reels ke liye niche di gayi list mein se koi bhi topics choose kar sakte hain. (Min 1 Topic, Max 3).
-                </p>
-            </div>
+            <h2 class="text-3xl md:text-6xl font-serif font-black text-brand-dark uppercase mb-4 leading-tight">Categories</h2>
+            <p class="text-brand-pink text-[10px] tracking-[0.3em] uppercase mb-16 font-black italic">Pick your theme and capture the market</p>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
-                <!-- Categories A-D (Simplified view) -->
-                <div class="bg-white/5 border border-gold/20 p-5 rounded-2xl award-border hover:bg-white/10 transition">
-                    <h3 class="text-gold font-black uppercase mb-4 text-xs md:text-sm border-b border-gold/20 pb-2">Category A: Fashion</h3>
-                    <ul class="text-[10px] space-y-3 text-slate-300 italic">
-                        <li>1. Outfit Transition Reel</li>
-                        <li>2. Budget Look Challenge</li>
-                        <li>3. Festival Styling</li>
-                        <li>4. Try & Decide Reel</li>
-                        <li>5. One Store, Many Styles</li>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+                <!-- Festive Traditions -->
+                <div class="bg-white p-8 rounded-[2rem] border-2 border-brand-pink shadow-sm hover:shadow-xl transition group">
+                    <div class="text-4xl mb-6 group-hover:scale-110 transition duration-300">🌙</div>
+                    <h3 class="text-brand-pink font-black uppercase mb-6 text-sm md:text-base border-b-2 border-pink-50 pb-4">Festive Traditions</h3>
+                    <ul class="text-[11px] md:text-xs space-y-4 text-slate-600 font-semibold italic leading-relaxed">
+                        <li class="flex gap-2">✦ <strong>Outfit Reveal:</strong> Traditional wear transition reel.</li>
+                        <li>✦ <strong>Shopping Mood:</strong> Celebration shopping and gifts selection.</li>
+                        <li>✦ <strong>Family Relatable:</strong> Relatable festive shopping jokes/meme.</li>
                     </ul>
                 </div>
-                <div class="bg-white/5 border border-gold/20 p-5 rounded-2xl award-border hover:bg-white/10 transition">
-                    <h3 class="text-gold font-black uppercase mb-4 text-xs md:text-sm border-b border-gold/20 pb-2">Category B: Meme</h3>
-                    <ul class="text-[10px] space-y-3 text-slate-300 italic">
-                        <li>6. Expectation vs Reality</li>
-                        <li>7. Desi Family Shopping</li>
-                        <li>8. Salary vs Shopping</li>
-                        <li>9. Fashion Problems</li>
-                        <li>10. POV Meme</li>
+
+                <!-- Grand Celebration -->
+                <div class="bg-white p-8 rounded-[2rem] border-2 border-brand-purple shadow-sm hover:shadow-xl transition group">
+                    <div class="text-4xl mb-6 group-hover:scale-110 transition duration-300">💍</div>
+                    <h3 class="text-brand-purple font-black uppercase mb-6 text-sm md:text-base border-b-2 border-purple-50 pb-4">Grand Celebration</h3>
+                    <ul class="text-[11px] md:text-xs space-y-4 text-slate-600 font-semibold italic leading-relaxed">
+                        <li class="flex gap-2">✦ <strong>Party Styling:</strong> Cinematic look for special events.</li>
+                        <li>✦ <strong>Guest Meme:</strong> Funny baraati or event group shopping.</li>
+                        <li>✦ <strong>Signature Stock:</strong> Showcase premium signature wear.</li>
                     </ul>
                 </div>
-                <div class="bg-white/5 border border-gold/20 p-5 rounded-2xl award-border hover:bg-white/10 transition">
-                    <h3 class="text-gold font-black uppercase mb-4 text-xs md:text-sm border-b border-gold/20 pb-2">Category C: Experience</h3>
-                    <ul class="text-[10px] space-y-3 text-slate-300 italic">
-                        <li>11. First Visit Experience</li>
-                        <li>12. Hidden Gems of Store</li>
-                        <li>13. Local Stores Pride</li>
-                        <li>14. Entry Transition</li>
-                        <li>15. One Minute Store Tour</li>
-                    </ul>
-                </div>
-                <div class="bg-white/5 border border-gold/20 p-5 rounded-2xl award-border hover:bg-white/10 transition">
-                    <h3 class="text-gold font-black uppercase mb-4 text-xs md:text-sm border-b border-gold/20 pb-2">Category D: Voiceover</h3>
-                    <ul class="text-[10px] space-y-3 text-slate-300 italic">
-                        <li>16. Honest Review Reel</li>
-                        <li>17. Styling Tips VO</li>
-                        <li>18. Shopping Guide</li>
-                        <li>19. Fashion Advice</li>
-                        <li>20. Brand Appreciation</li>
+
+                <!-- Creative Fashion -->
+                <div class="bg-white p-8 rounded-[2rem] border-2 border-brand-dark shadow-sm hover:shadow-xl transition group">
+                    <div class="text-4xl mb-6 group-hover:scale-110 transition duration-300">📸</div>
+                    <h3 class="text-brand-dark font-black uppercase mb-6 text-sm md:text-base border-b-2 border-slate-50 pb-4">Creative Fashion</h3>
+                    <ul class="text-[11px] md:text-xs space-y-4 text-slate-600 font-semibold italic leading-relaxed">
+                        <li class="flex gap-2">✦ <strong>Expectation vs Reality:</strong> Relatable fashion fun angle.</li>
+                        <li>✦ <strong>Budget Challenge:</strong> Stylish look create karna in budget.</li>
+                        <li>✦ <strong>One Minute Tour:</strong> Fast walkthrough of whole shop.</li>
                     </ul>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Rules Section -->
-    <section id="rules" class="bg-rich py-20 px-4">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 text-left">
-            <!-- Content Rules -->
-            <div class="border border-gold/20 p-8 rounded-[2rem] bg-black/50 shadow-2xl award-border">
-                <h2 class="text-xl md:text-2xl font-serif font-black italic gold-text-gradient uppercase mb-6 border-b border-gold/20 pb-2">Content Rules</h2>
-                <ul class="space-y-4">
-                    <li class="flex gap-4">
-                        <span class="text-gold text-xl">📱</span>
-                        <p class="text-xs md:text-sm font-semibold text-slate-300 italic">Platform: Sirf Instagram Reels allowed hain.</p>
-                    </li>
-                    <li class="flex gap-4">
-                        <span class="text-gold text-xl">🎥</span>
-                        <p class="text-xs md:text-sm font-semibold text-slate-300 italic">Kam se kam <strong>1 original reel</strong> banana zaruri hai (Max 3).</p>
-                    </li>
-                    <li class="flex gap-4">
-                        <span class="text-gold text-xl">🏬</span>
-                        <p class="text-xs md:text-sm font-semibold text-slate-300 italic">Saari shooting <strong>Sri Balbhadralal Arun Kumar shop</strong> par hogi.</p>
-                    </li>
-                    <li class="flex gap-4">
-                        <span class="text-gold text-xl">📋</span>
-                        <p class="text-xs md:text-sm font-semibold text-slate-300 italic">Content original aur brand-safe hona chahiye.</p>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Posting Rules -->
-            <div class="border border-gold/20 p-8 rounded-[2rem] bg-black/50 shadow-2xl award-border">
-                <h2 class="text-xl md:text-2xl font-serif font-black italic gold-text-gradient uppercase mb-6 border-b border-gold/20 pb-2">Posting Rules</h2>
-                <ul class="space-y-4 text-left">
-                    <li class="flex gap-4">
-                        <span class="text-gold text-xl">⏰</span>
-                        <p class="text-xs md:text-sm font-semibold text-slate-300 italic">Upload within 7 days from shoot date.</p>
-                    </li>
-                    <li class="flex gap-4">
-                        <span class="text-gold text-xl">🏷️</span>
-                        <div>
-                            <p class="text-xs md:text-sm font-semibold text-slate-300 mb-1 italic">Tag @sribalbhadralalarunkumar & @tripixelmedia.</p>
-                            <p class="text-xs font-black text-gold-light tracking-widest">Hashtag: #SBLAKCreatorContest</p>
-                        </div>
-                    </li>
-                    <li class="flex gap-4">
-                        <span class="text-red-500 text-xl font-black">🚫</span>
-                        <p class="text-xs md:text-sm font-semibold text-red-400 italic">Paid promotion ya boosting allowed nahi hai.</p>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="max-w-4xl mx-auto mt-10 border border-red-900/30 p-8 rounded-[2rem] bg-red-950/10 backdrop-blur-sm text-center">
-            <h2 class="text-xl font-serif font-black italic text-red-500 uppercase mb-4 tracking-widest">Important Rules ⚠️</h2>
-            <p class="text-[10px] md:text-xs text-slate-300 italic">Fake engagement ya bots se disqualification hoga. Final decision Organizing team ka hoga.</p>
-        </div>
-    </section>
-
-    <!-- Scoring Section -->
-    <section id="scoring" class="bg-black border-y border-gold/10 py-20 px-4">
-        <div class="max-w-6xl mx-auto text-center">
-            <h2 class="text-2xl md:text-5xl font-serif font-bold italic gold-text-gradient mb-8 uppercase tracking-tighter text-center w-full">Score Calculation</h2>
             
-            <div class="grid md:grid-cols-2 gap-10 items-start text-left max-w-5xl mx-auto">
+            <div class="mt-12 bg-slate-50 border border-slate-100 p-6 rounded-2xl inline-block">
+                <p class="text-xs md:text-sm text-brand-pink font-black italic uppercase tracking-wider leading-relaxed">Note: Minimum 1 reel banana mandatory hai (Aap 3 tak bana sakte hain).</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scoring Section (Fully Updated Metrics) -->
+    <section id="scoring" class="bg-slate-50 py-24 px-4 border-y border-slate-100 text-center">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-6xl font-serif font-black text-slate-900 mb-4 uppercase tracking-tighter">Scoring Metrics</h2>
+            <p class="text-[10px] text-brand-pink tracking-[0.3em] uppercase mb-16 font-black italic">Fair judgment based on 100 Points</p>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-start text-left max-w-5xl mx-auto">
                 <div class="space-y-4">
-                    <div class="p-6 bg-black border border-gold/20 shadow-xl rounded-xl">
-                        <p class="text-[8px] md:text-[10px] text-gold uppercase font-black mb-3 tracking-widest italic">Reach Score (40 Points)</p>
+                    <div class="p-6 bg-white border border-slate-100 rounded-3xl shadow-sm">
+                        <p class="text-[10px] text-brand-pink uppercase font-black mb-3 italic">Reach Factor (40 Points)</p>
                         <div class="math-container">
-                            <img src="https://latex.codecogs.com/svg.latex?Score%20%3D%20%5Cleft(%20%5Cfrac%7BAapke%20Views%7D%7BHighest%20Views%7D%20%5Cright)%20%5Ctimes%2040" 
-                                 alt="Reach Formula" class="formula-img">
+                            <img src="https://latex.codecogs.com/svg.latex?Score%20%3D%20%5Cleft(%20%5Cfrac%7BAapke%20Views%7D%7BHighest%20Views%7D%20%5Cright)%20%5Ctimes%2040" alt="Reach Formula" class="formula-img">
                         </div>
                     </div>
-                    <div class="p-6 bg-black border border-gold/20 shadow-xl rounded-xl">
-                        <p class="text-[8px] md:text-[10px] text-gold uppercase font-black mb-3 tracking-widest italic">Engagement (30 Points)</p>
+                    <div class="p-6 bg-white border border-slate-100 rounded-3xl shadow-sm">
+                        <p class="text-[10px] text-brand-purple uppercase font-black mb-3 italic">Engagement Factor (30 Points)</p>
                         <div class="math-container">
-                            <img src="https://latex.codecogs.com/svg.latex?Score%20%3D%20%5Cleft(%20%5Cfrac%7BAapka%20Engagement%7D%7BHighest%20Engagement%7D%20%5Cright)%20%5Ctimes%2030" 
-                                 alt="Engagement Formula" class="formula-img">
+                            <img src="https://latex.codecogs.com/svg.latex?Score%20%3D%20%5Cleft(%20%5Cfrac%7BAapka%20Engagement%7D%7BHighest%20Engagement%7D%20%5Cright)%20%5Ctimes%2030" alt="Engagement Formula" class="formula-img">
                         </div>
                     </div>
-                    <div class="p-6 bg-gold/5 border-l-4 border-gold rounded-r-xl">
-                        <p class="text-xs md:text-sm font-black text-white uppercase italic text-left tracking-widest mb-1">Quality Score (30 Points)</p>
-                        <p class="text-[10px] text-slate-400 italic text-left">Creativity + Rules compliance.</p>
+                    <!-- Detailed Breakdown Boxes -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-6 bg-pink-50 border border-brand-pink/20 rounded-2xl text-center">
+                            <p class="text-[9px] font-black text-brand-pink uppercase mb-1">Creativity</p>
+                            <p class="text-2xl font-black text-brand-dark">20 Pts</p>
+                            <p class="text-[8px] text-slate-400 italic">Brand Alignment</p>
+                        </div>
+                        <div class="p-6 bg-purple-50 border border-brand-purple/20 rounded-2xl text-center">
+                            <p class="text-[9px] font-black text-brand-purple uppercase mb-1">Discipline</p>
+                            <p class="text-2xl font-black text-brand-dark">10 Pts</p>
+                            <p class="text-[8px] text-slate-400 italic">Rule Compliance</p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="bg-[#0a0a0a] p-8 border border-gold/30 rounded-xl shadow-2xl award-border">
-                    <h4 class="font-serif font-black text-lg mb-6 text-white border-b border-gold/20 pb-2 text-center uppercase italic">Real-Life Example:</h4>
-                    <div class="space-y-4 text-[11px] md:text-xs font-medium leading-relaxed">
-                        <div class="flex justify-between text-slate-400">
-                            <span>Highest Views: 1,00,000</span>
-                            <span class="text-white font-black italic">Aapke: 50,000</span>
+                <!-- Final Breakdown Summary -->
+                <div class="bg-white p-10 border-4 border-brand-pink rounded-[3rem] shadow-2xl shadow-pink-100 h-full flex flex-col justify-center">
+                    <h4 class="font-serif font-black text-xl mb-6 text-slate-900 border-b-2 border-slate-100 pb-4 text-center uppercase italic">Breakdown Sum:</h4>
+                    <div class="space-y-4 text-sm font-bold italic text-slate-500">
+                        <div class="flex justify-between border-b border-slate-50 pb-3">
+                            <span>Reach Metric</span>
+                            <span class="text-brand-pink">40 Points</span>
                         </div>
-                        <div class="p-4 bg-gold/5 border border-gold/10 text-center italic text-gold-light font-black rounded-lg">
-                            Calculation: (50k / 100k) × 40 = <span class="text-lg text-white">20 Points</span>
+                        <div class="flex justify-between border-b border-slate-50 pb-3">
+                            <span>Engagement Metric</span>
+                            <span class="text-brand-pink">30 Points</span>
                         </div>
-                        <p class="text-slate-500 text-[10px] mt-4 italic text-center">Agar Quality best hai, toh kam views mein bhi aap <strong>Winner</strong> ban sakte hain!</p>
-                        <div class="mt-8 bg-gold p-4 text-black text-center font-black uppercase tracking-[0.2em] text-lg rounded-sm">Total Points: 100</div>
+                        <div class="flex justify-between border-b border-slate-50 pb-3">
+                            <span>Creativity & Brand Alignment</span>
+                            <span class="text-brand-purple">20 Points</span>
+                        </div>
+                        <div class="flex justify-between border-b border-slate-50 pb-3">
+                            <span>Discipline & Rule Compliance</span>
+                            <span class="text-brand-purple">10 Points</span>
+                        </div>
+                        <div class="mt-8 bg-brand-dark p-6 text-white text-center font-black uppercase tracking-widest text-2xl rounded-2xl shadow-lg">Total: 100 Points</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 px-4 bg-black text-center">
-        <div class="max-w-2xl mx-auto border-t border-b border-gold/20 py-12 relative overflow-hidden">
-            <h2 class="text-3xl font-serif font-black gold-text-gradient mb-10 italic uppercase tracking-widest">Questions? Contact Jury</h2>
-            <div class="space-y-10">
-                <div>
-                    <p class="text-[10px] text-white/40 uppercase tracking-[0.5em] font-black mb-1 italic">Contest Managed By</p>
-                    <p class="font-serif font-black text-3xl text-white tracking-tighter leading-none italic uppercase">Tripixel Media</p>
-                </div>
-                <div class="flex flex-col items-center">
-                    <p class="text-[9px] text-gold uppercase tracking-[0.4em] font-black mb-4 italic font-bold">Official Support Number</p>
-                    <a href="tel:6206459531" class="flex items-center gap-4 hover:scale-110 transition duration-300">
-                        <span class="p-2.5 border border-gold/30 rounded-full text-gold text-lg">📞</span>
-                        <span class="font-mono text-3xl font-black text-white tracking-tighter italic leading-none underline decoration-gold/50 decoration-1 underline-offset-8">
-                            6206459531
-                        </span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Final Contact Jury Segment (VIBRANT & FIXED) -->
+    <section id="contact" class="py-24 px-4 bg-brand-dark text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-brand-pink/5 blur-[100px] rounded-full pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-brand-purple/5 blur-[100px] rounded-full pointer-events-none"></div>
 
-    <!-- Registration CTA -->
-    <section id="register" class="py-24 px-4 bg-black text-center relative">
-        <div class="max-w-4xl mx-auto relative z-10">
-            <h2 class="text-3xl md:text-7xl font-serif font-black text-white mb-6 leading-tight tracking-tighter uppercase italic">Taiyar Ho <br><span class="gold-text-gradient">Star Banne Ke Liye?</span></h2>
-            <p class="text-slate-500 text-xs md:text-base mb-12 max-w-sm mx-auto font-light leading-relaxed text-center px-4">Aaj hi register kijiye Sri Balbhadralal Arun Kumar Creator Contest 2026 mein.</p>
+        <div class="max-w-6xl mx-auto relative z-10">
+            <h2 class="text-3xl md:text-7xl font-serif font-black text-brand-pink mb-16 italic uppercase tracking-tighter text-center">Contact Jury</h2>
             
-            <a href="https://forms.gle/your-form-link" target="_blank" class="inline-block px-14 py-6 bg-white text-black text-2xl font-black rounded-sm shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:bg-gold transition transform hover:-translate-y-2 uppercase tracking-tighter italic">
-                Register Now 🎫
-            </a>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <!-- Branding & Direct Support -->
+                <div class="text-left space-y-12">
+                    <div class="space-y-4">
+                        <p class="text-[10px] text-white/40 uppercase tracking-[0.5em] font-black italic">Managed By</p>
+                        <div class="flex items-center gap-5">
+                            <img src="Tripixel Logo.png" alt="Tripixel Marketing" class="contact-logo">
+                            <span class="font-serif font-black text-4xl text-white tracking-tighter italic uppercase">Tripixel Media</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <p class="text-[10px] text-brand-pink uppercase tracking-[0.4em] font-black mb-4 italic font-bold">24/7 Official Support</p>
+                        <a href="tel:6206459531" class="flex items-center gap-6 group">
+                            <!-- Fixed Phone Icon Color & Effect -->
+                            <span class="p-5 bg-brand-pink rounded-full text-white text-3xl shadow-[0_0_40px_rgba(240,42,166,0.8)] group-hover:bg-brand-purple transition duration-300">
+                                <i class="fas fa-phone-alt"></i>
+                            </span>
+                            <span class="font-mono text-4xl md:text-6xl font-black text-white tracking-tighter italic underline decoration-brand-pink decoration-2 underline-offset-8">
+                                6206459531
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Socials & Identity -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 text-left">
+                    <!-- Sri Blak Socials -->
+                    <div class="p-8 bg-white/5 rounded-3xl border border-white/10 hover:border-brand-pink transition duration-300 shadow-sm group">
+                        <img src="sri blak logo.png" alt="Sri Blak Shop" class="h-12 mb-6 group-hover:scale-105 transition">
+                        <p class="text-[10px] text-slate-400 uppercase tracking-widest font-black mb-4 leading-tight">Sri Balbhadralal<br>Arun Kumar</p>
+                        <div class="flex gap-6">
+                            <a href="https://www.instagram.com/sri_balbhadralal_arun_kumar?igsh=MTRianloMG45OTFjag==" target="_blank" class="text-3xl text-brand-pink hover:text-white transition transform hover:scale-110"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/share/1He8yDtGzV/" target="_blank" class="text-3xl text-blue-500 hover:text-white transition transform hover:scale-110"><i class="fab fa-facebook"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Tripixel Media Socials -->
+                    <div class="p-8 bg-white/5 rounded-3xl border border-white/10 hover:border-brand-purple transition duration-300 shadow-sm group">
+                        <img src="Tripixel Logo.png" alt="Tripixel Agency" class="h-12 mb-6 group-hover:scale-105 transition">
+                        <p class="text-[10px] text-slate-400 uppercase tracking-widest font-black mb-4 leading-tight">Tripixel Media<br>Agency Partner</p>
+                        <div class="flex gap-6">
+                            <a href="https://www.instagram.com/tripixel_media?igsh=ZndjbnI3YnczM3h0" target="_blank" class="text-3xl text-brand-purple hover:text-white transition transform hover:scale-110"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-full h-[500px] bg-gold/5 blur-[120px] rounded-full -z-0 pointer-events-none"></div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-12 bg-[#050505] text-center border-t border-gold/10 px-4">
-        <div class="flex justify-center items-center gap-6 md:gap-10 opacity-30 mb-8">
-            <div class="text-center">
-                <span class="text-white font-serif font-black text-xs md:text-sm italic block">Sri Blak</span>
-                <span class="text-[7px] text-gold font-bold uppercase tracking-widest leading-none">Legacy Shop</span>
-            </div>
-            <div class="h-6 w-px bg-white/10"></div>
-            <div class="text-center">
-                <span class="text-white font-black text-xs md:text-sm italic block uppercase">Tripixel</span>
-                <span class="text-[7px] text-gold font-bold uppercase tracking-widest leading-none">Media Partner</span>
-            </div>
+    <footer class="py-20 bg-slate-50 text-center border-t border-slate-100 px-4">
+        <div class="flex justify-center items-center gap-6 md:gap-12 opacity-90 mb-12">
+            <!-- Order of logos in footer -->
+            <img src="sri blak logo.png" alt="Sri Blak Logo" class="footer-logo">
+            <div class="h-12 w-px bg-slate-200"></div>
+            <img src="Tripixel Logo.png" alt="Tripixel Logo" class="footer-logo">
+            <div class="h-12 w-px bg-slate-200"></div>
+            <img src="Creator Contest Logo.png" alt="Contest Logo" class="footer-logo">
         </div>
-        <p class="text-slate-600 text-[8px] md:text-[10px] uppercase tracking-[0.4em] font-black italic max-w-xl mx-auto text-center leading-relaxed px-4">
-            © 2026 Sri Balbhadralal Arun Kumar • All Rights Reserved • Powered by Tripixel Media
+        <p class="text-slate-400 text-[10px] uppercase tracking-[0.4em] font-black italic max-w-xl mx-auto text-center leading-relaxed">
+            © 2026 Sri Balbhadralal Arun Kumar • All Rights Reserved • Digitally Powered by Tripixel Media
         </p>
     </footer>
 
