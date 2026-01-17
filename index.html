@@ -30,8 +30,6 @@
                     },
                     animation: {
                         'float-slow': 'float 6s ease-in-out infinite',
-                        'float-mid': 'float 4s ease-in-out infinite',
-                        'spin-slow': 'spin 8s linear infinite',
                         'money-fall': 'moneyFall 5s linear infinite',
                     },
                     keyframes: {
@@ -183,28 +181,100 @@
             box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
             transition: all 0.4s ease;
         }
+
+        /* Mobile Menu Transitions */
+        #mobile-menu {
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        #mobile-menu.hidden-menu {
+            transform: translateX(100%);
+        }
+
+        /* Reusable Section Button Style */
+        .section-cta {
+            display: inline-block;
+            padding: 1.25rem 3.5rem;
+            background-color: #f02aa6;
+            color: white;
+            font-size: 1.25rem;
+            font-weight: 900;
+            border-radius: 9999px;
+            text-transform: uppercase;
+            font-style: italic;
+            letter-spacing: -0.025em;
+            box-shadow: 0 10px 25px -5px rgba(240, 42, 166, 0.4);
+            transition: all 0.3s ease;
+        }
+        .section-cta:hover {
+            background-color: #6d28d9;
+            transform: translateY(-4px);
+            box-shadow: 0 20px 35px -5px rgba(109, 40, 217, 0.4);
+        }
+
+        .date-badge {
+            background: rgba(240, 42, 166, 0.1);
+            color: #f02aa6;
+            padding: 4px 12px;
+            border-radius: 8px;
+            font-weight: 800;
+            font-size: 0.75rem;
+            display: inline-block;
+            margin-top: 8px;
+            border: 1px solid rgba(240, 42, 166, 0.2);
+        }
     </style>
 </head>
 <body>
 
     <!-- Navigation Bar -->
-    <nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-lg border-b border-slate-200 shadow-md">
-        <div class="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between h-24 md:h-28">
+    <nav class="fixed top-0 w-full z-[100] bg-white/95 backdrop-blur-lg border-b border-slate-200 shadow-md">
+        <div class="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between h-20 md:h-28">
             <div class="flex items-center">
                 <img src="Creator%20Contest%20Logo.png" alt="Creator Contest" class="nav-logo">
             </div>
-            <!-- Links -->
+            
+            <!-- Desktop Links -->
             <div class="hidden lg:flex gap-10 text-[13px] uppercase font-bold tracking-widest text-slate-700">
                 <a href="#steps" class="hover:text-brand-pink transition">Steps</a>
                 <a href="#topics" class="hover:text-brand-pink transition">Topics</a>
                 <a href="#scoring" class="hover:text-brand-pink transition">Scoring</a>
+                <a href="#faq" class="hover:text-brand-pink transition">FAQ</a>
                 <a href="#contact" class="hover:text-brand-pink transition">Contact</a>
             </div>
-            <a href="https://forms.gle/gTw3uNax5UtE6n178" target="_blank" rel="noopener noreferrer" class="bg-brand-pink text-white px-8 py-3.5 text-[11px] font-black uppercase tracking-widest transition rounded-full btn-shadow shadow-lg">
-                Register Now
-            </a>
+
+            <div class="flex items-center gap-4">
+                <a href="https://forms.gle/gTw3uNax5UtE6n178" target="_blank" rel="noopener noreferrer" class="hidden sm:block bg-brand-pink text-white px-6 py-3 text-[10px] md:text-[11px] font-black uppercase tracking-widest transition rounded-full btn-shadow shadow-lg">
+                    Register Now
+                </a>
+                
+                <!-- Hamburger Button (Mobile Only) -->
+                <button id="menu-toggle" class="lg:hidden text-brand-dark text-2xl p-2 focus:outline-none">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </div>
     </nav>
+
+    <!-- Mobile Navigation Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[110] bg-brand-dark/95 backdrop-blur-xl hidden-menu lg:hidden flex flex-col items-center justify-center text-center p-8">
+        <button id="menu-close" class="absolute top-8 right-8 text-white text-4xl p-2">
+            <i class="fas fa-times"></i>
+        </button>
+
+        <img src="Creator%20Contest%20Logo.png" alt="Logo" class="h-24 mb-12 opacity-90">
+
+        <div class="flex flex-col gap-8 text-2xl font-black uppercase tracking-widest text-white">
+            <a href="#steps" class="mobile-link hover:text-brand-pink transition">Steps</a>
+            <a href="#topics" class="mobile-link hover:text-brand-pink transition">Topics</a>
+            <a href="#scoring" class="mobile-link hover:text-brand-pink transition">Scoring</a>
+            <a href="#faq" class="mobile-link hover:text-brand-pink transition">FAQ</a>
+            <a href="#contact" class="mobile-link hover:text-brand-pink transition">Contact</a>
+        </div>
+
+        <a href="https://forms.gle/gTw3uNax5UtE6n178" target="_blank" rel="noopener noreferrer" class="mt-16 bg-brand-pink text-white px-12 py-5 text-lg font-black uppercase tracking-tighter rounded-full shadow-2xl">
+            Register Now 🚀
+        </a>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero-section bg-slate-50 relative overflow-hidden">
@@ -213,9 +283,8 @@
             <!-- Massive Creator Contest Logo -->
             <img src="Creator%20Contest%20Logo.png" alt="Creator Contest Logo" class="hero-top-logo mx-auto">
             
-            <!-- NEW: SUPERB INDIAN CURRENCY ANIMATED PRIZE POOL -->
+            <!-- SUPERB INDIAN CURRENCY ANIMATED PRIZE POOL -->
             <div class="prize-area">
-                <!-- Falling Notes & Coins Background Layer -->
                 <div class="currency-layer">
                     <div class="note animate-money-fall" style="left: 10%; animation-delay: 0s;"></div>
                     <div class="note animate-money-fall" style="left: 30%; animation-delay: 2s;"></div>
@@ -251,7 +320,7 @@
                 Aapki creativity ko milega ek naya stage. Sri Blak shop par aaiye, reels banaiye aur 2026 ke digital star baniye.
             </p>
 
-            <a href="https://forms.gle/gTw3uNax5UtE6n178" target="_blank" rel="noopener noreferrer" class="inline-block px-16 py-7 bg-brand-pink text-white text-2xl font-black rounded-full transition uppercase tracking-tighter italic btn-shadow">
+            <a href="https://forms.gle/gTw3uNax5UtE6n178" target="_blank" rel="noopener noreferrer" class="inline-block px-16 py-7 bg-brand-pink text-white text-2xl font-black rounded-full transition uppercase tracking-tighter italic btn-shadow shadow-xl shadow-pink-200">
                 Nomination Register Karein 🚀
             </a>
             
@@ -264,26 +333,26 @@
 
     <!-- Who Can Participate -->
     <section id="participants" class="bg-white py-24 px-4 border-b border-slate-100">
-        <div class="max-w-6xl mx-auto">
+        <div class="max-w-6xl mx-auto text-center">
             <h2 class="text-4xl md:text-7xl font-serif font-black text-brand-dark uppercase mb-20 tracking-tighter">Who Can Participate?</h2>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-                <div class="pro-card p-10 rounded-[2.5rem] text-center group">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 text-center">
+                <div class="pro-card p-10 rounded-[2.5rem] flex flex-col items-center justify-center group">
                     <div class="text-6xl mb-6 group-hover:scale-110 transition duration-300">🤳</div>
                     <p class="text-sm font-black text-slate-800 uppercase tracking-widest leading-tight">Content Creators</p>
                 </div>
-                <div class="pro-card p-10 rounded-[2.5rem] text-center group">
+                <div class="pro-card p-10 rounded-[2.5rem] flex flex-col items-center justify-center group">
                     <div class="text-6xl mb-6 group-hover:scale-110 transition duration-300">🎭</div>
                     <p class="text-sm font-black text-slate-800 uppercase tracking-widest leading-tight">Meme Pages</p>
                 </div>
-                <div class="pro-card p-10 rounded-[2.5rem] text-center group">
+                <div class="pro-card p-10 rounded-[2.5rem] flex flex-col items-center justify-center group">
                     <div class="text-6xl mb-6 group-hover:scale-110 transition duration-300">👠</div>
                     <p class="text-sm font-black text-slate-800 uppercase tracking-widest leading-tight">Lifestyle Stars</p>
                 </div>
-                <div class="pro-card p-10 rounded-[2.5rem] text-center group">
+                <div class="pro-card p-10 rounded-[2.5rem] flex flex-col items-center justify-center group">
                     <div class="text-6xl mb-6 group-hover:scale-110 transition duration-300">📍</div>
                     <p class="text-sm font-black text-slate-800 uppercase tracking-widest leading-tight">Local Guides</p>
                 </div>
-                <div class="pro-card p-10 rounded-[2.5rem] text-center group col-span-2 lg:col-span-1 mx-auto lg:mx-0 w-full">
+                <div class="pro-card p-10 rounded-[2.5rem] flex flex-col items-center justify-center group col-span-2 lg:col-span-1 mx-auto lg:mx-0 w-full">
                     <div class="text-6xl mb-6 group-hover:scale-110 transition duration-300">🆕</div>
                     <p class="text-sm font-black text-slate-800 uppercase tracking-widest leading-tight">Beginners</p>
                 </div>
@@ -294,46 +363,58 @@
         </div>
     </section>
 
-    <!-- Event Roadmap -->
+    <!-- Event Roadmap (Updated with Dates) -->
     <section id="steps" class="bg-slate-50 py-24 px-4 border-y border-slate-100">
         <div class="max-w-6xl mx-auto text-center">
             <h2 class="text-4xl md:text-7xl font-serif font-black text-brand-dark uppercase mb-4 tracking-tighter">Event Roadmap</h2>
-            <p class="text-brand-purple text-base uppercase tracking-[0.3em] font-black italic mb-20">The Journey to Victory</p>
+            <p class="text-brand-purple text-base uppercase tracking-[0.3em] font-black italic mb-20">The Journey to Victory (2026 Schedule)</p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10 text-left">
                 <div class="pro-card p-10 rounded-[2.5rem]">
                     <div class="step-bubble">1</div>
-                    <h3 class="text-brand-dark font-black uppercase mb-4 text-base tracking-widest">Register</h3>
+                    <h3 class="text-brand-dark font-black uppercase mb-2 text-base tracking-widest leading-tight text-brand-pink">Open Registration</h3>
                     <p class="text-xs text-slate-600 font-bold italic">Google Form bhariye aur apni details share karein.</p>
+                    <span class="date-badge">25 Jan - 5 Feb 2026</span>
                 </div>
                 <div class="pro-card p-10 rounded-[2.5rem]">
                     <div class="step-bubble bg-brand-pink">2</div>
-                    <h3 class="text-brand-dark font-black uppercase mb-4 text-base tracking-widest">Confirmation</h3>
-                    <p class="text-xs text-slate-600 font-bold italic">Team reviews and confirms your shoot date.</p>
+                    <h3 class="text-brand-dark font-black uppercase mb-2 text-base tracking-widest leading-tight text-brand-pink">Selection Alert</h3>
+                    <p class="text-xs text-slate-600 font-bold italic">Team selection & shoot dates deliver karegi.</p>
+                    <span class="date-badge bg-brand-purple/10 text-brand-purple border-brand-purple/20">6 Feb - 10 Feb 2026</span>
                 </div>
                 <div class="pro-card p-10 rounded-[2.5rem]">
                     <div class="step-bubble">3</div>
-                    <h3 class="text-brand-dark font-black uppercase mb-4 text-base tracking-widest">The Shoot</h3>
+                    <h3 class="text-brand-dark font-black uppercase mb-2 text-base tracking-widest leading-tight text-brand-pink">The Content Shoot</h3>
                     <p class="text-xs text-slate-600 font-bold italic">Assigned date par Sri Blak shop aakar reels shoot karein.</p>
+                    <span class="date-badge">Starting 10 Feb 2026</span>
                 </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10 text-left">
                 <div class="pro-card p-10 rounded-[2.5rem]">
                     <div class="step-bubble bg-brand-pink">4</div>
-                    <h3 class="text-brand-dark font-black uppercase mb-4 text-base tracking-widest">Post & Track</h3>
-                    <p class="text-xs text-slate-600 font-bold italic">Reels upload in 7 days & tag us properly.</p>
+                    <h3 class="text-brand-dark font-black uppercase mb-2 text-base tracking-widest leading-tight text-brand-pink">Post & Track</h3>
+                    <p class="text-xs text-slate-600 font-bold italic">Reels upload in 7 days of shoot & tag us.</p>
+                    <span class="date-badge bg-slate-100 text-slate-500 border-slate-200">Tracking Period</span>
                 </div>
-                <div class="bg-brand-pink p-10 rounded-[2.5rem] shadow-2xl text-white border-2 border-white/20">
-                    <div class="step-bubble bg-white text-brand-pink">5</div>
-                    <h3 class="font-black uppercase mb-4 text-base tracking-widest">Winners</h3>
-                    <p class="text-xs italic font-black">Score announcement and Grand Prize distribution!</p>
+                <div class="bg-brand-pink p-10 rounded-[2.5rem] shadow-2xl text-white border-2 border-white/20 text-center">
+                    <div class="step-bubble bg-white text-brand-pink mx-auto">5</div>
+                    <h3 class="font-black uppercase mb-2 text-base tracking-widest leading-tight">Grand Results</h3>
+                    <p class="text-xs italic font-black">Final scores & Prize distribution ceremony!</p>
+                    <span class="date-badge bg-white/20 text-white border-white/30">Schedule Wise</span>
                 </div>
+            </div>
+
+            <!-- REGISTER BUTTON (AFTER ROADMAP) -->
+            <div class="mt-20 text-center">
+                <a href="https://forms.gle/gTw3uNax5UtE6n178" target="_blank" rel="noopener noreferrer" class="section-cta shadow-pink-200">
+                    Register For Nomination 🚀
+                </a>
             </div>
         </div>
     </section>
 
     <!-- CONTENT TOPICS -->
     <section id="topics" class="bg-white py-24 px-4 border-b border-slate-100">
-        <div class="max-w-7xl mx-auto">
+        <div class="max-w-7xl mx-auto text-center">
             <div class="text-center mb-20">
                 <h2 class="text-4xl md:text-7xl font-serif font-black text-brand-dark uppercase mb-4 tracking-tighter">Content Topics</h2>
                 <p class="text-brand-pink text-[13px] tracking-[0.4em] uppercase font-black italic">Pick ANY 3 topics for your viral reels</p>
@@ -365,8 +446,8 @@
                     <ul class="text-[12px] space-y-5 text-slate-600 font-bold italic">
                         <li>✦ First Visit: Genuine reaction & walkthrough.</li>
                         <li>✦ Hidden Gems: Spotlight on underrated stock.</li>
+                        <li>✦ Local Pride: Storytelling on local impact.</li>
                         <li>✦ Entry Transition: Cinematic reveal transition.</li>
-                        <li>✦ One Minute Tour: Fast-paced high-energy tour.</li>
                     </ul>
                 </div>
                 <div class="pro-card p-10 rounded-[2.5rem] border-2 border-brand-pink shadow-xl">
@@ -407,14 +488,14 @@
                 <div class="space-y-6">
                     <div class="pro-card p-10 rounded-[2rem]">
                         <p class="text-[11px] text-brand-pink uppercase font-black mb-4 italic tracking-widest">Reach Factor (40 Points)</p>
-                        <div class="math-container">
-                            <img src="https://latex.codecogs.com/svg.latex?Score%20%3D%20%5Cleft(%20%5Cfrac%7BAapke%20Views%7D%7BHighest%20Views%7D%20%5Cright)%20%5Ctimes%2040" alt="Reach Formula" class="formula-img">
+                        <div class="math-container text-center">
+                            <img src="https://latex.codecogs.com/svg.latex?Score%20%3D%20%5Cleft(%20%5Cfrac%7BAapke%20Views%7D%7BHighest%20Views%7D%20%5Cright)%20%5Ctimes%2040" alt="Reach Formula" class="formula-img inline-block">
                         </div>
                     </div>
                     <div class="pro-card p-10 rounded-[2rem]">
                         <p class="text-[11px] text-brand-purple uppercase font-black mb-4 italic tracking-widest">Engagement Factor (30 Points)</p>
-                        <div class="math-container">
-                            <img src="https://latex.codecogs.com/svg.latex?Score%20%3D%20%5Cleft(%20%5Cfrac%7BAapka%20Engagement%7D%7BHighest%20Engagement%7D%20%5Cright)%20%5Ctimes%2030" alt="Engagement Formula" class="formula-img">
+                        <div class="math-container text-center">
+                            <img src="https://latex.codecogs.com/svg.latex?Score%20%3D%20%5Cleft(%20%5Cfrac%7BAapka%20Engagement%7D%7BHighest%20Engagement%7D%20%5Cright)%20%5Ctimes%2030" alt="Engagement Formula" class="formula-img inline-block">
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-6">
@@ -423,7 +504,7 @@
                             <p class="text-5xl font-black text-brand-dark">20</p>
                         </div>
                         <div class="bg-purple-50 border-2 border-brand-purple/20 shadow-md rounded-3xl p-10 text-center">
-                            <p class="text-[11px] font-black text-brand-purple uppercase mb-2">Discipline</p>
+                            <p class="text-[11px] font-black text-brand-purple uppercase mb-2">Rules</p>
                             <p class="text-5xl font-black text-brand-dark">10</p>
                         </div>
                     </div>
@@ -432,48 +513,64 @@
                     <h4 class="font-serif font-black text-3xl mb-10 text-brand-dark border-b-2 border-slate-100 pb-6 uppercase italic">The Winner Path:</h4>
                     <div class="space-y-6 text-sm md:text-base font-black italic text-slate-600 text-left px-4">
                         <div class="flex justify-between border-b border-slate-100 pb-4"><span>Reach Metric</span><span class="text-brand-pink">40 Pts</span></div>
-                        <div class="flex justify-between border-b border-slate-100 pb-4"><span>Engagement Metric</span><span class="text-brand-pink">30 Pts</span></div>
+                        <div class="flex justify-between border-b border-slate-100 pb-4"><span>Engagement</span><span class="text-brand-pink">30 Pts</span></div>
                         <div class="flex justify-between border-b border-slate-100 pb-4"><span>Creativity & Alignment</span><span class="text-brand-purple">20 Pts</span></div>
                         <div class="flex justify-between border-b border-slate-100 pb-4"><span>Discipline & Rules</span><span class="text-brand-purple">10 Pts</span></div>
                         <div class="mt-12 bg-brand-dark p-8 text-white text-center font-black uppercase tracking-widest text-3xl rounded-[2rem] shadow-2xl">Total: 100 Pts</div>
                     </div>
                 </div>
             </div>
+
+            <!-- REGISTER BUTTON (AFTER SCORING) -->
+            <div class="mt-20 text-center">
+                <a href="https://forms.gle/gTw3uNax5UtE6n178" target="_blank" rel="noopener noreferrer" class="section-cta shadow-purple-200">
+                    Apply Now 🚀
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- IMPORTANT RULES SECTION -->
     <section id="important-rules" class="bg-white py-28 px-4 border-b border-slate-100">
-        <div class="max-w-5xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-7xl font-serif font-black text-brand-dark uppercase mb-4 tracking-tighter italic leading-none">Important Rules</h2>
-                <p class="text-brand-pink text-[13px] tracking-[0.4em] uppercase font-black italic">Fair play is the only way to win</p>
-            </div>
-            <div class="pro-card p-10 md:p-16 rounded-[4rem] border-2 border-brand-dark bg-slate-50 shadow-2xl relative overflow-hidden">
-                <div class="absolute top-0 right-0 p-8 opacity-5 text-8xl font-black italic">SBLAK</div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-16 text-left relative z-10">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-4xl md:text-7xl font-serif font-black text-brand-dark uppercase mb-4 tracking-tighter italic leading-none">Important Rules</h2>
+            <p class="text-brand-pink text-[13px] tracking-[0.4em] uppercase font-black italic mb-16">Brand Integrity is our Top Priority</p>
+            
+            <div class="pro-card p-10 md:p-16 rounded-[4rem] border-2 border-brand-dark bg-slate-50 shadow-2xl relative overflow-hidden text-left">
+                <!-- FCFS HIGHLIGHT RULE -->
+                <div class="mb-12 p-8 bg-brand-pink text-white rounded-3xl shadow-xl transform rotate-1 border-2 border-white/20">
+                    <h3 class="text-2xl font-black uppercase tracking-widest mb-4 italic flex items-center gap-4">
+                        <i class="fas fa-bolt"></i> Most Important Rule
+                    </h3>
+                    <p class="text-base md:text-lg font-black italic leading-tight">
+                        "First Come First Serve!" - Jitna jaldi aap register karenge, utna jaldi aapko shoot date milegi, aur utna hi zyada time aapko videos upload aur tracking ke liye milega. Early registration gets priority slots!
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-16 relative z-10">
+                    <!-- Contest Integrity Column -->
                     <div class="space-y-8">
                         <div class="flex items-center gap-4">
                             <span class="p-3 bg-brand-pink/10 rounded-xl text-brand-pink text-xl"><i class="fas fa-gavel"></i></span>
                             <h3 class="text-brand-pink font-black uppercase text-sm tracking-[0.2em] italic">Contest Integrity</h3>
                         </div>
                         <ul class="space-y-6 text-sm md:text-base font-bold italic text-slate-700">
-                            <li class="flex gap-4 border-b border-slate-200 pb-4"><span class="text-brand-pink font-black">•</span> Fake engagement or bots will lead to disqualification.</li>
-                            <li class="flex gap-4 border-b border-slate-200 pb-4"><span class="text-brand-pink font-black">•</span> Content must remain live during the tracking period.</li>
-                            <li class="flex gap-4 border-b border-slate-200 pb-4"><span class="text-brand-pink font-black">•</span> Any violation of rules may result in removal.</li>
-                            <li class="flex gap-4"><span class="text-brand-pink font-black">•</span> Final decision rests with the team.</li>
+                            <li class="flex gap-4 border-b border-slate-200 pb-4"><span class="text-brand-pink font-black">•</span> Fake engagement or bots usage will lead to instant disqualification.</li>
+                            <li class="flex gap-4 border-b border-slate-200 pb-4"><span class="text-brand-pink font-black">•</span> Content must remain live and public during the tracking period.</li>
+                            <li class="flex gap-4 border-b border-slate-200 pb-4"><span class="text-brand-pink font-black">•</span> Any violation of contest rules will result in immediate removal.</li>
                         </ul>
                     </div>
+                    
+                    <!-- Brand Safety Column -->
                     <div class="space-y-8">
                         <div class="flex items-center gap-4">
                             <span class="p-3 bg-brand-purple/10 rounded-xl text-brand-purple text-xl"><i class="fas fa-shield-alt"></i></span>
-                            <h3 class="text-brand-purple font-black uppercase text-sm tracking-[0.2em] italic">Brand Conduct</h3>
+                            <h3 class="text-brand-purple font-black uppercase text-sm tracking-[0.2em] italic">Brand & Conduct</h3>
                         </div>
                         <ul class="space-y-6 text-sm md:text-base font-bold italic text-slate-700">
-                            <li class="flex gap-4 border-b border-slate-200 pb-4"><span class="text-brand-purple font-black">•</span> No offensive or brand-harming content allowed.</li>
-                            <li class="flex gap-4 border-b border-slate-200 pb-4"><span class="text-brand-purple font-black">•</span> Maintain positive representation of Sri Blak.</li>
-                            <li class="flex gap-4 border-b border-slate-200 pb-4"><span class="text-brand-purple font-black">•</span> High quality (HD/4K) video is mandatory.</li>
-                            <li class="flex gap-4"><span class="text-brand-purple font-black">•</span> Respect store staff during the shoot.</li>
+                            <li class="flex gap-4 border-b border-slate-200 pb-4 text-brand-pink font-black"><span class="text-brand-purple font-black">•</span> Mandatory Collab only with official @sri_balbhadralal_arun_kumar account.</li>
+                            <li class="flex gap-4 border-b border-slate-200 pb-4"><span class="text-brand-purple font-black">•</span> Brand image should not be harmed; maintain positive representation only.</li>
+                            <li class="flex gap-4 border-b border-slate-200 pb-4"><span class="text-brand-purple font-black">•</span> No offensive, political, or controversial content allowed in videos.</li>
                         </ul>
                     </div>
                 </div>
@@ -483,41 +580,41 @@
 
     <!-- Contact Us Section -->
     <section id="contact" class="py-28 px-4 bg-white border-t border-slate-100">
-        <div class="max-w-7xl mx-auto relative z-10 text-center">
+        <div class="max-w-7xl mx-auto text-center">
             <h2 class="text-4xl md:text-8xl font-serif font-black text-brand-pink mb-24 italic uppercase tracking-tighter">Contact Us</h2>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center text-left">
                 <div class="space-y-16">
                     <div>
-                        <p class="text-[13px] text-brand-purple uppercase tracking-[0.6em] font-black italic mb-6">Digitally Managed By</p>
-                        <div class="flex items-center gap-8">
+                        <p class="text-[13px] text-brand-purple uppercase tracking-[0.6em] font-black italic mb-6 text-center lg:text-left">Digitally Managed By</p>
+                        <div class="flex flex-col lg:flex-row items-center gap-8">
                             <img src="Tripixel%20Logo.png" alt="Tripixel" class="contact-logo">
                             <span class="font-serif font-black text-5xl md:text-6xl text-brand-dark uppercase italic leading-none">Tripixel Media</span>
                         </div>
                     </div>
-                    <div class="bg-slate-50 p-10 rounded-[3rem] border-2 border-slate-200 shadow-xl max-w-lg">
-                        <p class="text-[13px] text-brand-pink uppercase tracking-[0.5em] font-black italic font-bold mb-6">Official Support Number</p>
-                        <a href="tel:6206459531" class="flex items-center gap-8 group">
-                            <span class="p-6 bg-brand-pink rounded-full text-white text-3xl shadow-2xl shadow-pink-200 group-hover:bg-brand-purple transition duration-500 border-2 border-white/20"><i class="fas fa-phone-alt"></i></span>
-                            <span class="font-mono text-4xl md:text-6xl font-black text-brand-dark tracking-tighter underline decoration-brand-pink decoration-2 underline-offset-[16px]">6206459531</span>
+                    <div class="bg-slate-50 p-10 rounded-[3rem] border-2 border-slate-200 shadow-xl max-w-lg mx-auto lg:mx-0">
+                        <p class="text-[13px] text-brand-pink uppercase tracking-[0.5em] font-black italic font-bold mb-6 text-center">Official Support Number</p>
+                        <a href="tel:6206459531" class="flex items-center gap-8 group justify-center lg:justify-start">
+                            <span class="p-6 bg-brand-pink rounded-full text-white text-3xl shadow-2xl group-hover:bg-brand-purple transition duration-500 border-2 border-white/20"><i class="fas fa-phone-alt"></i></span>
+                            <span class="font-mono text-4xl md:text-5xl font-black text-brand-dark tracking-tighter underline decoration-brand-pink decoration-2 underline-offset-[16px]">6206459531</span>
                         </a>
                     </div>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                    <div class="social-card p-10 rounded-[3rem] group">
-                        <img src="sri%20blak%20logo.png" alt="Sri Blak" class="h-20 mb-8 group-hover:scale-105 transition duration-500 mx-auto">
+                    <div class="social-card p-10 rounded-[3rem] group bg-brand-light text-center">
+                        <img src="sri%20blak%20logo.png" alt="Sri Blak" class="h-20 mb-8 group-hover:scale-105 transition mx-auto">
                         <div class="space-y-4">
-                            <a href="https://www.instagram.com/sri_balbhadralal_arun_kumar?igsh=MTRianloMG45OTFjag==" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between w-full px-6 py-4 rounded-2xl bg-brand-pink text-white font-black text-xs uppercase tracking-wider hover:bg-brand-purple transition-all duration-300 shadow-lg">
+                            <a href="https://www.instagram.com/sri_balbhadralal_arun_kumar?igsh=MTRianloMG45OTFjag==" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between w-full px-6 py-4 rounded-2xl bg-brand-pink text-white font-black text-xs uppercase tracking-wider hover:bg-brand-purple transition shadow-lg">
                                 <span>Instagram</span> <i class="fab fa-instagram text-xl"></i>
                             </a>
-                            <a href="https://www.facebook.com/share/1He8yDtGzV/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between w-full px-6 py-4 rounded-2xl bg-blue-600 text-white font-black text-xs uppercase tracking-wider hover:bg-blue-800 transition-all duration-300 shadow-lg">
+                            <a href="https://www.facebook.com/share/1He8yDtGzV/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between w-full px-6 py-4 rounded-2xl bg-blue-600 text-white font-black text-xs uppercase tracking-wider hover:bg-blue-800 transition shadow-lg">
                                 <span>Facebook</span> <i class="fab fa-facebook text-xl"></i>
                             </a>
                         </div>
                     </div>
-                    <div class="social-card p-10 rounded-[3rem] group">
-                        <img src="Tripixel%20Logo.png" alt="Tripixel" class="h-20 mb-8 group-hover:scale-105 transition duration-500 mx-auto">
+                    <div class="social-card p-10 rounded-[3rem] group bg-brand-light text-center">
+                        <img src="Tripixel%20Logo.png" alt="Tripixel" class="h-20 mb-8 group-hover:scale-105 transition mx-auto">
                         <div class="space-y-4">
-                            <a href="https://www.instagram.com/tripixel_media?igsh=ZndjbnI3YnczM3h0" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between w-full px-6 py-4 rounded-2xl bg-brand-purple text-white font-black text-xs uppercase tracking-wider hover:bg-brand-dark transition-all duration-300 shadow-lg">
+                            <a href="https://www.instagram.com/tripixel_media?igsh=ZndjbnI3YnczM3h0" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between w-full px-6 py-4 rounded-2xl bg-brand-purple text-white font-black text-xs uppercase tracking-wider hover:bg-brand-dark transition shadow-lg">
                                 <span>Instagram</span> <i class="fab fa-instagram text-xl"></i>
                             </a>
                         </div>
@@ -527,8 +624,50 @@
         </div>
     </section>
 
+    <!-- FAQ SECTION -->
+    <section id="faq" class="py-28 px-4 bg-slate-50 border-y border-slate-200">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-4xl md:text-7xl font-serif font-black text-brand-dark uppercase mb-4 tracking-tighter">Frequently Asked Questions</h2>
+            <p class="text-brand-purple text-[13px] tracking-[0.4em] uppercase font-black italic mb-20">Clear your doubts and start creating</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                <div class="pro-card p-10 rounded-[2.5rem]">
+                    <h3 class="text-brand-pink font-black uppercase text-sm mb-4 border-b border-brand-pink/10 pb-2">Q1: Reels ki limit kitni hai?</h3>
+                    <p class="text-slate-600 text-sm font-bold italic">Minimum 1 reel banana mandatory hai. Aap maximum 3 reels tak upload kar sakte hain taaki views ka benefit mil sake.</p>
+                </div>
+                <div class="pro-card p-10 rounded-[2.5rem] bg-brand-pink/5 border-brand-pink">
+                    <h3 class="text-brand-pink font-black uppercase text-sm mb-4 border-b border-brand-pink/20 pb-2">Q2: Scoring kaise calculate hogi agar maine 3 reels banayi hain?</h3>
+                    <p class="text-slate-700 text-sm font-black italic">Agar aap 3 reels banate hain, toh aapki <span class="text-brand-pink">teeno reels ke views aur engagements combine (plus) karke</span> total score nikala jayega. Jisne sirf 1 video banayi hai, uska sirf usi single video ka count mana jayega.</p>
+                </div>
+                <div class="pro-card p-10 rounded-[2.5rem]">
+                    <h3 class="text-brand-purple font-black uppercase text-sm mb-4 border-b border-brand-purple/10 pb-2">Q3: Kya followers count matter karta hai?</h3>
+                    <p class="text-slate-600 text-sm font-bold italic">Bilkul nahi! Hum sirf aapki creativity aur content quality ke basis par points dete hain.</p>
+                </div>
+                <div class="pro-card p-10 rounded-[2.5rem]">
+                    <h3 class="text-brand-pink font-black uppercase text-sm mb-4 border-b border-brand-pink/10 pb-2">Q4: Equipment kaun layega?</h3>
+                    <p class="text-slate-600 text-sm font-bold italic">Aapko apna phone ya camera, gimbal ya tripod khud laana hoga.</p>
+                </div>
+                <div class="pro-card p-10 rounded-[2.5rem]">
+                    <h3 class="text-brand-purple font-black uppercase text-sm mb-4 border-b border-brand-purple/10 pb-2 text-brand-pink font-black">Q5: Collab kiske saath karna hai?</h3>
+                    <p class="text-slate-600 text-sm font-bold italic">Aapko sirf <strong class="text-brand-dark">Sri Balbhadralal Arun Kumar</strong> official account ke saath hi collab karna hoga. Doston ke saath collab allow nahi hai.</p>
+                </div>
+                <div class="pro-card p-10 rounded-[2.5rem]">
+                    <h3 class="text-brand-pink font-black uppercase text-sm mb-4 border-b border-brand-pink/10 pb-2">Q6: Winners ka announcement kab hoga?</h3>
+                    <p class="text-slate-600 text-sm font-bold italic">Tracking period khatam hone ke baad social media par winners announce kiye jayenge.</p>
+                </div>
+            </div>
+
+            <!-- REGISTER BUTTON (AFTER FAQ) -->
+            <div class="mt-20 text-center">
+                <a href="https://forms.gle/gTw3uNax5UtE6n178" target="_blank" rel="noopener noreferrer" class="section-cta shadow-pink-200">
+                    Claim Your Spot Now 🚀
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
-    <footer class="py-24 bg-slate-50 text-center border-t border-slate-200 px-4">
+    <footer class="py-24 bg-white text-center border-t border-slate-200 px-4">
         <div class="flex justify-center items-center gap-16 md:gap-32 opacity-100 mb-20 flex-wrap">
             <img src="sri%20blak%20logo.png" alt="Sri Blak" class="footer-logo">
             <div class="hidden md:block h-24 w-px bg-slate-300"></div>
@@ -536,26 +675,40 @@
             <div class="hidden md:block h-24 w-px bg-slate-300"></div>
             <img src="Creator%20Contest%20Logo.png" alt="Contest Logo" class="footer-logo">
         </div>
-        <p class="text-slate-500 text-[12px] uppercase tracking-[0.5em] font-black italic max-w-xl mx-auto text-center leading-relaxed">
+        <p class="text-slate-500 text-[12px] uppercase tracking-[0.5em] font-black italic max-w-xl mx-auto text-center leading-relaxed px-6">
             © 2026 Sri Balbhadralal Arun Kumar • All Rights Reserved • Digitally Managed by Tripixel Media
         </p>
     </footer>
 
-    <!-- Script to Generate Dynamic Notes/Coins for Pro-Level Realism -->
+    <!-- Script to Generate Dynamic Notes/Coins -->
     <script>
         const layer = document.querySelector('.currency-layer');
         const types = ['note', 'coin'];
-        
-        for(let i=0; i<15; i++) {
+        for(let i=0; i<20; i++) {
             const el = document.createElement('div');
             const type = types[Math.floor(Math.random() * types.length)];
             el.className = `${type} animate-money-fall`;
             el.style.left = Math.random() * 100 + '%';
             el.style.animationDelay = Math.random() * 5 + 's';
-            el.style.animationDuration = (3 + Math.random() * 3) + 's';
+            el.style.animationDuration = (4 + Math.random() * 4) + 's';
             if(type === 'coin') el.innerText = '₹';
             layer.appendChild(el);
         }
+
+        // Mobile Menu
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('hidden-menu');
+            document.body.style.overflow = mobileMenu.classList.contains('hidden-menu') ? 'auto' : 'hidden';
+        }
+
+        menuToggle.addEventListener('click', toggleMenu);
+        menuClose.addEventListener('click', toggleMenu);
+        mobileLinks.forEach(link => link.addEventListener('click', () => { if(!mobileMenu.classList.contains('hidden-menu')) toggleMenu(); }));
     </script>
 
 </body>
