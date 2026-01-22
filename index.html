@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
+    <!-- Google Analytics (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CDT9919EDD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-CDT9919EDD');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creator Contest 2026 | Sri Balbhadralal Arun Kumar</title>
@@ -31,6 +41,7 @@
                     animation: {
                         'float-slow': 'float 6s ease-in-out infinite',
                         'money-fall': 'moneyFall 5s linear infinite',
+                        'shimmer-prize': 'shimmerPrize 3s infinite linear',
                     },
                     keyframes: {
                         float: {
@@ -41,6 +52,10 @@
                             '0%': { transform: 'translateY(-100%) rotate(0deg)', opacity: '0' },
                             '20%': { opacity: '1' },
                             '100%': { transform: 'translateY(1000%) rotate(360deg)', opacity: '0' },
+                        },
+                        shimmerPrize: {
+                            '0%': { backgroundPosition: '-200% 0' },
+                            '100%': { backgroundPosition: '200% 0' },
                         }
                     }
                 }
@@ -85,7 +100,7 @@
             .nav-logo { height: 65px; }
             .hero-top-logo { height: 280px; }
             .title-logo { height: 110px; }
-            .partner-logo { height: 100px; }
+            .partner-logo { height: 120px; }
         }
 
         /* PREMIUM CURRENCY ANIMATION STYLES */
@@ -126,7 +141,7 @@
         }
 
         .prize-glass-card {
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(15px);
             border: 3px solid #f02aa6;
             padding: 3rem 5rem;
@@ -140,7 +155,7 @@
         .prize-text {
             font-family: 'Playfair Display', serif;
             font-weight: 900;
-            font-size: 7rem;
+            font-size: 7.5rem;
             line-height: 1;
             background: linear-gradient(to bottom, #f02aa6, #6d28d9);
             -webkit-background-clip: text;
@@ -149,10 +164,27 @@
             letter-spacing: -3px;
         }
 
+        .all-participants-badge {
+            display: inline-block;
+            margin-top: 1.5rem;
+            background: linear-gradient(90deg, #f02aa6, #6d28d9, #f02aa6);
+            background-size: 200% auto;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 99px;
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            animation: shimmer-prize 3s linear infinite;
+            box-shadow: 0 10px 20px rgba(240, 42, 166, 0.3);
+        }
+
         @media (max-width: 768px) {
             .prize-text { font-size: 4rem; }
-            .prize-glass-card { padding: 2rem 3rem; border-radius: 35px; }
+            .prize-glass-card { padding: 2rem 2rem; border-radius: 35px; width: 90%; }
             .note { width: 60px; height: 30px; font-size: 8px; }
+            .all-participants-badge { font-size: 0.7rem; padding: 8px 15px; }
         }
 
         .step-bubble {
@@ -295,12 +327,17 @@
                 </div>
 
                 <div class="prize-glass-card animate-float-slow">
-                    <p class="text-slate-400 text-[11px] md:text-sm font-black uppercase tracking-[0.5em] mb-4 italic">Grand Prize Pool</p>
+                    <p class="text-slate-400 text-[11px] md:text-sm font-black uppercase tracking-[0.5em] mb-4 italic leading-none">Total Prize Pool</p>
                     <h3 class="prize-text">₹20,000</h3>
-                    <div class="mt-4 pt-4 border-t border-brand-pink/10">
-                        <p class="text-brand-purple text-xs md:text-base font-black uppercase tracking-[0.2em] italic">
+                    
+                    <div class="mt-6 flex flex-col items-center">
+                        <p class="text-brand-purple text-xs md:text-lg font-black uppercase tracking-[0.1em] italic">
                             Cash Prize + Gift Vouchers
                         </p>
+                        <!-- NEW REWARDS FOR ALL -->
+                        <div class="all-participants-badge">
+                            🏆 Appreciation Memento / Vouchers for ALL Participants
+                        </div>
                     </div>
                 </div>
             </div>
@@ -392,7 +429,7 @@
                 <div class="pro-card p-10 rounded-[2.5rem]">
                     <div class="step-bubble bg-brand-pink">4</div>
                     <h3 class="text-brand-dark font-black uppercase mb-2 text-base tracking-widest leading-tight text-brand-pink">Post & Track</h3>
-                    <p class="text-xs text-slate-600 font-bold italic">Reels upload in 7 days of shoot & tag us.</p>
+                    <p class="text-xs text-slate-600 font-bold italic">Reels upload in 7 days of shoot & tag us properly.</p>
                     <span class="date-badge bg-slate-100 text-slate-500 border-slate-200">Tracking Period</span>
                 </div>
                 <div class="bg-brand-pink p-10 rounded-[2.5rem] shadow-2xl text-white border-2 border-white/20 text-center">
