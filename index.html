@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Blak | Creator Contest Result</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandPink: '#e91e63', // Custom pink matching the screenshot
+                        brandDark: '#111827',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f8fafc;
+            overflow-x: hidden;
+        }
+        
+        /* Subtle background pattern */
+        .bg-pattern {
+            background-image: radial-gradient(#e91e63 0.5px, transparent 0.5px);
+            background-size: 20px 20px;
+            background-color: #fafafa;
+            opacity: 0.8;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(233, 30, 99, 0.1);
+            box-shadow: 0 10px 30px -10px rgba(233, 30, 99, 0.15);
+        }
+
+        /* Exciting pulse animation for the pink circles */
+        .pink-pulse {
+            animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+        
+        @keyframes pulse-ring {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(233, 30, 99, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(233, 30, 99, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(233, 30, 99, 0); }
+        }
+
+        /* Poll Bar Animation */
+        .poll-bar {
+            transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+<body class="bg-pattern min-h-screen text-gray-800 font-sans">
+
+    <!-- Navbar/Header similar to the screenshots -->
+    <header class="w-full bg-white/90 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="font-bold text-2xl tracking-tighter">
+                    <span class="text-brandDark">Sri</span><span class="text-brandPink">Blak</span>
+                </div>
+                <div class="hidden md:block h-6 w-px bg-gray-300 mx-2"></div>
+                <div class="font-semibold text-sm text-gray-500 hidden md:block">Creator Contest 2026</div>
+            </div>
+            <div>
+                <span class="bg-brandPink text-white px-5 py-2 rounded-full font-semibold text-sm shadow-md shadow-pink-200">
+                    Grand Finale
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-12 md:py-20 space-y-16">
+        
+        <!-- Hero Section -->
+        <section class="text-center space-y-6">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-pink-50 border border-brandPink/20 text-brandPink rounded-full text-sm font-semibold animate-bounce">
+                <span>⚠️</span> ALERT: THE CLOCK IS TICKING
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl font-extrabold text-brandDark tracking-tight leading-tight">
+                RESULT AAYEGA <br> 
+                <span class="font-serif italic text-brandPink font-normal">ya phir...</span> <br>
+                APRIL FOOL BANEGA? 🤡
+            </h1>
+            
+            <p class="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto">
+                Creator Contest ka sabse bada suspense! <strong>1st April, 11:00 AM</strong> ko final winners announce honge... ya phir Sri Blak ki taraf se hum sab ke liye koi epic surprise aane wala hai? Tayyar raho, kuch bada hone wala hai!
+            </p>
+        </section>
+
+        <!-- Countdown Section (Styled like the roadmap cards from your screenshot) -->
+        <section class="glass-card rounded-[2rem] p-8 md:p-12 text-center relative overflow-hidden">
+            <!-- Decorative circle -->
+            <div class="absolute -top-10 -right-10 w-32 h-32 bg-pink-100 rounded-full blur-2xl opacity-60"></div>
+            
+            <h2 class="text-2xl font-bold text-brandDark mb-8">SACH KA SAMNA IN...</h2>
+            
+            <div id="countdown" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                <!-- Days -->
+                <div class="bg-white rounded-2xl p-4 md:p-6 shadow-sm border border-gray-100 relative group hover:-translate-y-1 transition-transform">
+                    <div class="w-10 h-10 bg-brandPink text-white rounded-full flex items-center justify-center font-bold absolute -top-4 -left-4 shadow-lg pink-pulse">D</div>
+                    <span id="days" class="block text-4xl md:text-5xl font-black text-brandDark">00</span>
+                    <span class="text-sm font-semibold text-gray-400 uppercase tracking-wide mt-1 block">Din</span>
+                </div>
+                <!-- Hours -->
+                <div class="bg-white rounded-2xl p-4 md:p-6 shadow-sm border border-gray-100 relative group hover:-translate-y-1 transition-transform">
+                    <div class="w-10 h-10 bg-brandPink text-white rounded-full flex items-center justify-center font-bold absolute -top-4 -left-4 shadow-lg">H</div>
+                    <span id="hours" class="block text-4xl md:text-5xl font-black text-brandDark">00</span>
+                    <span class="text-sm font-semibold text-gray-400 uppercase tracking-wide mt-1 block">Ghante</span>
+                </div>
+                <!-- Minutes -->
+                <div class="bg-white rounded-2xl p-4 md:p-6 shadow-sm border border-gray-100 relative group hover:-translate-y-1 transition-transform">
+                    <div class="w-10 h-10 bg-brandPink text-white rounded-full flex items-center justify-center font-bold absolute -top-4 -left-4 shadow-lg">M</div>
+                    <span id="minutes" class="block text-4xl md:text-5xl font-black text-brandDark">00</span>
+                    <span class="text-sm font-semibold text-gray-400 uppercase tracking-wide mt-1 block">Minute</span>
+                </div>
+                <!-- Seconds -->
+                <div class="bg-white rounded-2xl p-4 md:p-6 shadow-sm border border-gray-100 relative group hover:-translate-y-1 transition-transform">
+                    <div class="w-10 h-10 bg-brandPink text-white rounded-full flex items-center justify-center font-bold absolute -top-4 -left-4 shadow-lg">S</div>
+                    <span id="seconds" class="block text-4xl md:text-5xl font-black text-brandPink">00</span>
+                    <span class="text-sm font-semibold text-brandPink/60 uppercase tracking-wide mt-1 block">Second</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Live Poll Section -->
+        <section class="bg-brandDark text-white rounded-[2rem] p-8 md:p-12 shadow-2xl relative">
+            <div class="absolute top-0 right-0 w-full h-full overflow-hidden rounded-[2rem] pointer-events-none">
+                <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-brandPink rounded-full blur-[80px] opacity-30"></div>
+            </div>
+
+            <div class="relative z-10 text-center space-y-8">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-3">AAPKA KYA KEHNA HAI? 🤔</h2>
+                    <p class="text-gray-400 text-sm md:text-base">Kya lagta hai, 1st April ko kya hone wala hai? Apna vote karein!</p>
+                </div>
+
+                <!-- Voting Buttons -->
+                <div id="poll-options" class="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
+                    <button onclick="submitPoll('real')" class="bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold py-4 px-6 rounded-xl transition-all flex flex-col items-center justify-center gap-2 group">
+                        <span class="text-3xl group-hover:scale-125 transition-transform">🏆</span>
+                        <span>100% Sach Hai Bhai!</span>
+                        <span class="text-xs text-gray-400 font-normal">Winners announce honge</span>
+                    </button>
+                    
+                    <button onclick="submitPoll('prank')" class="bg-brandPink/20 hover:bg-brandPink/40 border border-brandPink text-white font-semibold py-4 px-6 rounded-xl transition-all flex flex-col items-center justify-center gap-2 group">
+                        <span class="text-3xl group-hover:scale-125 transition-transform">🤯</span>
+                        <span>Mastermind Prank Hai!</span>
+                        <span class="text-xs text-pink-200 font-normal">Sri Blak ka ek epic surprise</span>
+                    </button>
+                </div>
+
+                <!-- Poll Results (Hidden initially) -->
+                <div id="poll-results" class="hidden max-w-2xl mx-auto space-y-6 text-left">
+                    <p class="text-center text-brandPink font-bold text-lg animate-pulse">Thanks for voting! Dekho public kya keh rahi hai:</p>
+                    
+                    <!-- Result 1 -->
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-sm font-semibold">
+                            <span>🏆 Result Aayega</span>
+                            <span id="percent-real">0%</span>
+                        </div>
+                        <div class="w-full bg-white/10 rounded-full h-4 overflow-hidden">
+                            <div id="bar-real" class="bg-white h-4 rounded-full poll-bar" style="width: 0%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Result 2 -->
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-sm font-semibold">
+                            <span class="text-brandPink">🤡 April Fool Banega</span>
+                            <span id="percent-prank" class="text-brandPink">0%</span>
+                        </div>
+                        <div class="w-full bg-white/10 rounded-full h-4 overflow-hidden">
+                            <div id="bar-prank" class="bg-brandPink h-4 rounded-full poll-bar" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    
+                    <p class="text-center text-sm text-gray-400 mt-4 italic">"Sacchai kya hai, ye sirf Sri Blak ko hi pata hai. Milte hain 1st April ko!"</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center pb-10 text-sm font-semibold text-gray-500">
+        <p>© 2026 Sri Blak & TriPixel Media. All rights reserved... maybe. 😉</p>
+    </footer>
+
+    <script>
+        // Set the date we're counting down to: April 1, 2026 11:00:00
+        const countDownDate = new Date("Apr 1, 2026 11:00:00").getTime();
+
+        // Update the count down every 1 second
+        const x = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "<div class='col-span-4 text-3xl font-black text-brandPink py-8'>THE WAIT IS OVER! (Or is it?)</div>";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Output the result in the elements
+            document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
+            document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+        }, 1000);
+        
+        // Initialize immediately to avoid jump
+        const now = new Date().getTime();
+        const initialDistance = countDownDate - now;
+        if(initialDistance > 0) {
+            document.getElementById("days").innerHTML = Math.floor(initialDistance / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+        }
+
+        // Poll Logic
+        function submitPoll(choice) {
+            // Hide options and show results container
+            document.getElementById('poll-options').style.display = 'none';
+            document.getElementById('poll-results').classList.remove('hidden');
+
+            // Set fake but believable percentages
+            // Let's make "Prank" slightly higher for the funny suspense!
+            const realVotePercent = 38;
+            const prankVotePercent = 62;
+
+            // Animate progress bars
+            setTimeout(() => {
+                document.getElementById('bar-real').style.width = realVotePercent + '%';
+                document.getElementById('bar-prank').style.width = prankVotePercent + '%';
+                
+                // Animate text numbers (simple counter)
+                animateValue("percent-real", 0, realVotePercent, 1500);
+                animateValue("percent-prank", 0, prankVotePercent, 1500);
+            }, 100);
+        }
+
+        // Simple function to animate numbers counting up
+        function animateValue(id, start, end, duration) {
+            if (start === end) return;
+            let range = end - start;
+            let current = start;
+            let increment = end > start? 1 : -1;
+            let stepTime = Math.abs(Math.floor(duration / range));
+            let obj = document.getElementById(id);
+            let timer = setInterval(function() {
+                current += increment;
+                obj.innerHTML = current + '%';
+                if (current == end) {
+                    clearInterval(timer);
+                }
+            }, stepTime);
+        }
+    </script>
+</body>
+</html>
